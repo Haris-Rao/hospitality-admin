@@ -126,11 +126,11 @@
   --fs-btn: var(--fs-200);
   --fs-input: var(--fs-150);
   /* font family */
-  --ff-primary: "satoshi";
-  --ff-primary-reg: "satoshi-regular";
-  --ff-primary-med: "satoshi-medium";
-  --ff-primary-semiBold: "satoshi-bold";
-  --ff-primary-bold: "satoshi-black";
+  --ff-primary: "inter-regular";
+  --ff-primary-reg: "inter-regular";
+  --ff-primary-med: "inter-medium";
+  --ff-primary-semiBold: "inter-bold";
+  --ff-primary-bold: "inter-black";
 
   @media (max-width: 480px) {
     font-size: 14px;
@@ -151,32 +151,32 @@
 }
 
 @font-face {
-  font-family: "satoshi-regular";
-  src: url("../fonts/satoshi-regular.otf") format("opentype");
+  font-family: "inter-regular";
+  src: url("../fonts/inter.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "satoshi-medium";
-  src: url("../fonts/satoshi-medium.otf") format("opentype");
+  font-family: "inter-medium";
+  src: url("../fonts/inter.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "satoshi-bold";
-  src: url("../fonts/satoshi-bold.otf") format("opentype");
+  font-family: "inter-bold";
+  src: url("../fonts/inter.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "satoshi-black";
-  src: url("../fonts/satoshi-black.otf") format("opentype");
+  font-family: "inter-black";
+  src: url("../fonts/inter.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
