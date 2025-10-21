@@ -6,7 +6,8 @@
 }
 
 .pageMain {
-  height: calc(100vh - 68px);
+  margin-block-start: 105px;
+  height: calc(100vh - 105px);
   overflow-x: clip;
   overflow-y: auto;
   overflow-clip-margin: 20px;

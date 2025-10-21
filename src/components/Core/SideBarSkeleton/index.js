@@ -1,9 +1,10 @@
 import DashboardNav from "@/components/DashboardNav";
+import classes from "./SideBarSkeleton.module.css";
 const SideBarSkeleton = ({ children }) => {
   return (
     <>
       <DashboardNav />
-      {children}
+      <div className={classes.pageMain}>{children}</div>
     </>
   );
 };
