@@ -32,7 +32,7 @@ const DashboardNav = ({ noLinks }) => {
     ],
     loggedIn: [
       { label: "Dashboard", value: "/dashboard" },
-      { label: "Room Management", value: "/room-management" },
+      { label: "Hotel Management", value: "/hotel-management" },
       { label: "Call Logs", value: "/call-logs" },
       { label: "Chat Management", value: "/chat-management" },
       { label: "Profile Settings", value: "/profile-setting" },
