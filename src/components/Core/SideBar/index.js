@@ -1,24 +1,23 @@
 import Logo from "@/components/Logo";
 import { routes } from "@/routes";
-import { usePathname, useRouter } from "next/navigation";
 import { cloneElement, useEffect, useState } from "react";
 import { FiChevronUp } from "react-icons/fi";
 import { GoSidebarCollapse } from "react-icons/go";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import classes from "./SideBar.module.css";
 
 const SideBar = ({ isCollapsed, setIsCollapsed, isMobile, setIsOpen }) => {
   const { user } = useSelector((state) => state.authReducer);
 
   const [popper, setPopper] = useState(null);
-  const router = useNavigate();
+  const navigate = useNavigate();
 
   const Links = routes;
 
   return (
     <div className={classes?.mainContainer}>
-      <div className={classes?.logoContainer} onClick={() => router.push("/")}>
+      <div className={classes?.logoContainer} onClick={() => navigate("/")}>
         <Logo
           variant={"logo"}
           type={"header"}
@@ -88,11 +87,11 @@ const RenderItem = ({
   setPopper,
   setIsOpen,
 }) => {
-  const pathname = usePathname();
+  const pathname = useLocation().pathname;
   const active = pathname === path ? true : false;
   const [subnav, setSubnav] = useState(false);
   const subActive = subMenu.find((item) => item?.path == pathname);
-  const router = useRouter();
+  const navigate = useNavigate();
   const showSubnav = () => setSubnav(!subnav);
   useEffect(() => {
     const allPaths = subMenu.map((item) => item?.path);
@@ -131,7 +130,7 @@ const RenderItem = ({
           } else {
             if (path != "#") {
               setIsOpen(false);
-              router.push(path);
+              navigate(path);
             }
           }
         }}
@@ -159,7 +158,7 @@ const RenderItem = ({
               <span
                 onClick={() => {
                   if (item?.path != "#") {
-                    router.push(item?.path);
+                    navigate(item?.path);
                   }
                 }}
                 className={[

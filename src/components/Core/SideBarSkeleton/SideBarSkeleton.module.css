@@ -2,6 +2,7 @@
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
+  flex: 1;
 }
 
 .pageMain {
@@ -43,7 +44,7 @@
 
 .contentDiv {
   width: calc(100% - 270px);
-  background-color: light-dark(#F4F6F8, #1C1C1C);
+  background-color: light-dark(#f4f6f8, #1c1c1c);
 }
 
 .contentIsCollapsed {

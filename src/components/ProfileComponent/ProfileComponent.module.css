@@ -1,0 +1,33 @@
+.image_name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  & > img {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--secondary-border-radius);
+  }
+  & > div {
+    & > h4 {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary-text-color-v1);
+      margin-block-end: 0;
+      text-transform: capitalize;
+    }
+    & > p {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.5;
+      color: var(--secondary-text-color);
+      margin-block-start: 0.5rem;
+    }
+  }
+}
+.circular {
+  & > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}

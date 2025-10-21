@@ -8,13 +8,16 @@ import { PersistGate } from "redux-persist/lib/integration/react";
 
 import store, { persistor } from "./store";
 import { WebSocketProvider } from "./context/socket";
+import { ThemeProvider } from "./customHooks/useTheme";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <WebSocketProvider>
-          <App />
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
         </WebSocketProvider>
       </PersistGate>
     </Provider>

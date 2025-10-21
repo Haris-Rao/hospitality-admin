@@ -1,21 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useGetMe } from "customHooks/useGetMe";
 import "font-awesome/css/font-awesome.min.css";
+import "react-day-picker/style.css";
 import "react-modern-drawer/dist/index.css";
 import "react-phone-number-input/style.css";
 import "react-quill/dist/quill.snow.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./assets/Styles/style.css";
 import "./assets/Styles/table.css";
-import ScrollToTop from "./helper/ScrollToTop";
 import { Loader } from "./components/Core/Loader";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import { useGetMe } from "customHooks/useGetMe";
-import "react-day-picker/style.css";
-
-import { lazy, Suspense, useEffect } from "react";
+import ScrollToTop from "./helper/ScrollToTop";
 import ProtectedRouter from "helper/ProtectedRoute";
-import { filterRoutes, getFirstRoute } from "./helper/HelperFunction";
+import { lazy, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { routes } from "./routes";
 

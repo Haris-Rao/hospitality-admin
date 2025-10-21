@@ -1,19 +1,19 @@
 import { imageUrl } from "@/config/apiUrl";
-import { cn, handleSignOut } from "@/helper/HelperFunction";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { BiChevronDown, BiUser } from "react-icons/bi";
 import { MdLogout, MdOutlineDashboard } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import PopperComponent from "../PopperComponent";
 import classes from "./UserPopover.module.css";
+import { Link, useNavigate } from "react-router-dom";
+import { signOutRequest } from "@/store/auth/authSlice";
+import { cn } from "@/helper/HelperFunction";
 
 export default function UserPopover({ user }) {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const navigate = useNavigate();
   const handleLogout = () => {
-    handleSignOut(dispatch, router);
+    dispatch(signOutRequest());
+    navigate("/");
   };
 
   return (
@@ -21,11 +21,11 @@ export default function UserPopover({ user }) {
       sideOffset={10}
       popperInsideElement={
         <div className={classes.list}>
-          <Link className={classes.link} href="/dashboard">
+          <Link className={classes.link} to="/dashboard">
             <MdOutlineDashboard />
             Dashboard
           </Link>
-          <Link className={classes.link} href="/profile-setting">
+          <Link className={classes.link} to="/profile-setting">
             <BiUser /> Profile Setting
           </Link>
           <span
@@ -39,7 +39,7 @@ export default function UserPopover({ user }) {
     >
       <div className={classes.userPopover}>
         <div className={classes.userPhoto}>
-          <Image
+          <img
             src={user?.photo ? imageUrl(user?.photo) : "/images/profile.png"}
             alt="profile"
             width={40}

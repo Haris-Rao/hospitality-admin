@@ -9,3 +9,5 @@ export { default as profileImg } from "../assets/images/user_image.png";
 export { default as airport_image } from "../assets/images/airport.png";
 export { default as airport_image_full } from "../assets/images/airport_image.png";
 export { default as section_image } from "../assets/images/sectionImg.png";
+export { default as Logo_Dark } from "../assets/images/Logo_dark.png";
+export { default as Logo_Light } from "../assets/images/Logo_light.png";

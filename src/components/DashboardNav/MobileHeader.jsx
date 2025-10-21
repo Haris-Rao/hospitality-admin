@@ -1,5 +1,4 @@
 import { cn, handleSignOut } from "@/helper/HelperFunction";
-import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
@@ -10,7 +9,9 @@ import "react-modern-drawer/dist/index.css";
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./MobileHeader.module.css";
 import Logo from "../Logo";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSelector from "../ThemeSelector";
+import { useLocation, useNavigate } from "react-router-dom";
+import { signOutRequest } from "@/store/auth/authSlice";
 
 export const MobileHeader = ({
   logo = "/images/Logo_Black.png",
@@ -21,7 +22,7 @@ export const MobileHeader = ({
 }) => {
   const { user, isLogin } = useSelector((state) => state?.authReducer);
   const { unreadNotification } = useSelector((state) => state?.commonReducer);
-  const router = useRouter();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -33,10 +34,7 @@ export const MobileHeader = ({
     <>
       <Container>
         <div className={classes.header}>
-          <div
-            className={classes.imageContainer}
-            onClick={() => router.push("/")}
-          >
+          <div className={classes.imageContainer} onClick={() => navigate("/")}>
             <Logo type={"header"} customClass={classes.headerLogo} />
           </div>
           <div className={classes.actions}>
@@ -48,7 +46,7 @@ export const MobileHeader = ({
                     isSticky && classes.sticky
                   )}
                   onClick={() => {
-                    router.push("/notifications");
+                    navigate("/notifications");
                   }}
                 >
                   {unreadNotification > 0 && (
@@ -59,14 +57,14 @@ export const MobileHeader = ({
                   <IoMdNotificationsOutline
                     color={"var(--white-color)"}
                     size={28}
-                    onClick={() => router.push("/notifications")}
+                    onClick={() => navigate("/notifications")}
                   />
                 </span>
                 {/* <Separator /> */}
                 {/* <UserPopover user={user} /> */}
               </>
             )}
-            <ThemeSwitcher />
+            <ThemeSelector />
             <RxHamburgerMenu
               className={`${classes.hamburger} ${
                 variant && classes.secondaryHamburger
@@ -153,14 +151,14 @@ const RenderListItem = ({
   target,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
+  const navigate = useNavigate();
+  const pathname = useLocation().pathname;
   const dispatch = useDispatch();
   const handleLanguageChange = (val) => {};
 
   const logout = () => {
-    handleSignOut(dispatch, router);
-    router.replace("/");
+    dispatch(signOutRequest());
+    navigate("/");
   };
   console.log(pathname, path);
   return (
@@ -188,7 +186,7 @@ const RenderListItem = ({
             if (target) {
               window.open(path, target);
             } else {
-              router.push(path);
+              navigate(path);
             }
           }
         }}

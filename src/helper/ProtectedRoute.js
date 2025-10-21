@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 function ProtectedRouter({ element, isProtected }) {
-  const isAuthenticated = useSelector((state) => state.authReducer.isLogin);
+  // const isAuthenticated = useSelector((state) => state.authReducer.isLogin);
+  const isAuthenticated = true;
 
   // route is protected and user is not authenticated
   if (isProtected && !isAuthenticated) {

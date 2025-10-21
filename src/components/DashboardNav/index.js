@@ -1,6 +1,5 @@
 "use client";
 import { cn, RenderToast } from "@/helper/HelperFunction";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -8,13 +7,14 @@ import { isMobileViewHook } from "../../customHooks/isMobileViewHook";
 import DesktopHeader from "./DesktopHeader";
 import classes from "./Header.module.css";
 import { MobileHeader } from "./MobileHeader";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 const DashboardNav = ({ noLinks }) => {
-  const type = useSearchParams().get("type");
+  const type = useSearchParams();
   const { user } = useSelector((state) => state?.authReducer);
-  const router = useRouter();
-  const paymentStatus = useSearchParams().get("success");
-  const pathname = usePathname();
+  const navigate = useNavigate();
+  const paymentStatus = useSearchParams();
+  const pathname = useLocation().pathname;
   const splitPath = pathname.split("/");
   const isSecondaryHeader =
     splitPath[1] === "profile-setting" || splitPath?.length > 2;
@@ -25,7 +25,7 @@ const DashboardNav = ({ noLinks }) => {
   const links = {
     loggedOut: [
       { label: "Dashboard", value: "/dashboard" },
-      { label: "Room Management", value: "/room-management" },
+      { label: "Hotel Management", value: "/hotel-management" },
       { label: "Call Logs", value: "/call-logs" },
       { label: "Chat Management", value: "/chat-management" },
       { label: "Profile Settings", value: "/profile-setting" },
@@ -83,7 +83,7 @@ const DashboardNav = ({ noLinks }) => {
             document.title,
             window.location.pathname
           );
-          router.push(window.location.pathname);
+          navigate(window.location.pathname);
         }, 3000);
       }
     }

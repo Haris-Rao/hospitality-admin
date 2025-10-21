@@ -1,9 +1,9 @@
-import Image from "next/image";
 import styles from "./Logo.module.css";
 import { cn } from "@/helper/HelperFunction";
 import { useEffect, useState } from "react";
 import { isMobileViewHook } from "@/customHooks/isMobileViewHook";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/customHooks/useTheme";
+import { Logo_Dark, Logo_Light } from "@/constant/imagePath";
 
 export default function Logo({
   variant = "logo",
@@ -22,20 +22,16 @@ export default function Logo({
 
   const logoSrcVariant = (theme = "light") => {
     return {
-      icon:
-        theme === "light" ? "/images/Icon_dark.png" : "/images/Icon_light.png",
+      icon: theme === "light" ? Logo_Dark : Logo_Light,
       logo:
         (mobile && !disableMobileChange) || isCollapsed
           ? theme === "light"
-            ? "/images/Logo_dark.png"
-            : "/images/Logo_light.png"
+            ? Logo_Dark
+            : Logo_Light
           : theme === "light"
-          ? "/images/Logo_dark.png"
-          : "/images/Logo_light.png",
-      footer:
-        theme === "light"
-          ? "/images/Logo_dark.png"
-          : "/images/Logo_light.png",
+          ? Logo_Dark
+          : Logo_Light,
+      footer: theme === "light" ? Logo_Dark : Logo_Light,
     };
   };
 
@@ -48,13 +44,7 @@ export default function Logo({
         customClass
       )}
     >
-      <Image
-        src={logoSrcVariant(theme)[variant]}
-        alt="Logo"
-        unoptimized={true}
-        quality={100}
-        layout="fill"
-      />
+      <img src={logoSrcVariant(theme)[variant]} alt="Logo" />
     </div>
   );
 }

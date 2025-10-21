@@ -1,18 +1,15 @@
 "use-client";
-import { Button } from "@/components/Core/Button";
 import { isMobileViewHook } from "@/customHooks/isMobileViewHook";
 import { cn } from "@/helper/HelperFunction";
-import Link from "next/link";
-import { useParams, usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { FaChevronDown } from "react-icons/fa6";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { useSelector } from "react-redux";
-import Separator from "../Core/Separator";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import UserPopover from "../Core/UserPopover";
 import Logo from "../Logo";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSelector from "../ThemeSelector";
 import Style from "./DesktopHeader.module.css";
 
 const DesktopHeader = ({
@@ -22,17 +19,15 @@ const DesktopHeader = ({
   variant,
   isSticky,
 }) => {
-  const params = useParams();
   const { user } = useSelector((state) => state?.authReducer);
   const { isLogin } = useSelector((state) => state?.authReducer);
-  const router = useRouter();
-  const pathname = usePathname();
+  const navigate = useNavigate();
+  const pathname = useLocation().pathname;
   const splitPath = pathname.split("/");
   const activeItem = splitPath[1];
 
   const { unreadNotification } = useSelector((state) => state?.commonReducer);
   const [isMobile, setIsMobile] = useState(false);
-  console.log(pathname);
 
   useEffect(() => {
     isMobileViewHook(setIsMobile, 992);
@@ -46,7 +41,7 @@ const DesktopHeader = ({
     <Container fluid>
       <Navbar collapseOnSelect expand="lg" className={cn(Style.header)}>
         <div className={Style.headerLeft}>
-          <div onClick={() => router.push("/")}>
+          <div onClick={() => navigate("/")}>
             <Logo type={"header"} />
           </div>{" "}
           <div>
@@ -65,7 +60,7 @@ const DesktopHeader = ({
                     {item.submenu.map((subItem, subIndex) => (
                       <Link
                         key={subIndex}
-                        href={subItem.value}
+                        to={subItem.value}
                         className={Style.dropdownItem}
                       >
                         {subItem.label}
@@ -76,7 +71,7 @@ const DesktopHeader = ({
               ) : (
                 <Link
                   key={index}
-                  href={`${item?.value}`}
+                  to={`${item?.value}`}
                   className={`${Style.nabarLinks} ${
                     variant && Style.secondaryNavbarLinks
                   } ${!isSticky && Style.stickyLinks} ${
@@ -90,15 +85,14 @@ const DesktopHeader = ({
           </div>
         </div>
         <Nav gap={5} className={Style.nav}></Nav>
-        {/* <ThemeSwitcher /> */}
         <div className={Style.dflex}>
           <>
             <div className={Style.notificationContainer}>
-              <ThemeSwitcher />
+              <ThemeSelector />
               <span
                 className={cn(Style.actionsIcon, Style.notificationIcon)}
                 onClick={() => {
-                  router.push("/notifications");
+                  navigate("/notifications");
                 }}
               >
                 {unreadNotification > 0 && (
@@ -109,7 +103,7 @@ const DesktopHeader = ({
                 <IoMdNotificationsOutline
                   color={"var(--primary-color)"}
                   size={22}
-                  onClick={() => router.push("/notifications")}
+                  onClick={() => navigate("/notifications")}
                 />
               </span>
               <span className={Style.notificationText}>Notification</span>
