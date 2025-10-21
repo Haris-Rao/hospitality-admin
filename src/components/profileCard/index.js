@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./profileCard.module.css";
 import { TbEye, TbPencil } from "react-icons/tb";
-import Image from "next/image";
 import { cn, formatDate, formatTime } from "@/helper/HelperFunction";
 
 function ProfileCard({
@@ -17,10 +16,11 @@ function ProfileCard({
       <div className={classes.topSection}>
         <div className={classes.imgNameWrapper}>
           <div className={classes.imgWrapper}>
-            <Image
+            <img
               src={data?.image || "/images/profile.png"}
               alt="profile"
-              fill
+              width={100}
+              height={100}
             />
           </div>
           <p>{data?.name || "John Doe"}</p>

@@ -1,12 +1,11 @@
 "use client";
 
+import { useMediaQuery } from "@/customHooks/useMediaQuery";
 import { LuListFilter } from "react-icons/lu";
-import BreadCrumbComponent from "../BreadCrumbComponent";
 import { Button } from "../Core/Button";
 import PopperComponent from "../Core/PopperComponent";
 import SearchInput from "../Core/SearchInput";
 import classes from "./PageHeader.module.css";
-import { useMediaQuery } from "@/customHooks/useMediaQuery";
 export default function PageHeader({
   title,
   breadcrumbs = [],
@@ -27,7 +26,7 @@ export default function PageHeader({
     <div className={classes.pageHeader}>
       <div className={classes.pageHeaderLeft}>
         <h2>{title}</h2>
-        {breadcrumbs.length > 0 && <BreadCrumbComponent data={breadcrumbs} />}
+        {/* {breadcrumbs.length > 0 && <BreadCrumbComponent data={breadcrumbs} />} */}
       </div>
       <div className={classes.pageHeaderRight}>
         {showSearch && (
