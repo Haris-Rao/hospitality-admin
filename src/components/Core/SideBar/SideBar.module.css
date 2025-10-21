@@ -1,0 +1,400 @@
+.sidebar__wrapper {
+  position: sticky;
+  top: 0;
+}
+
+.mainContainer {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border-right: 1px solid var(--border-color);
+  background-color: var(--background-quaternary);
+  position: relative;
+}
+
+.logoContainer {
+  min-height: 50px;
+  max-width: 277px;
+  margin-inline-end: auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+}
+
+.collapseLogo {
+  min-height: 50px;
+  max-width: 200px;
+}
+
+.logoContainer img {
+  height: auto;
+  max-width: 100%;
+}
+
+.logo {
+  position: relative;
+  height: 100px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoIcon {
+  position: relative;
+  height: 100px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggler {
+  position: absolute !important;
+  right: -55px;
+  top: 14px;
+  color: var(--text-color);
+  bottom: 0;
+  height: 40px !important;
+  width: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.toggleIcon {
+  rotate: 180deg;
+  cursor: pointer;
+}
+
+.itemsContainer {
+  height: calc(100vh - 73px);
+  padding-top: 1rem;
+  padding-inline: 12px;
+  display: flex;
+  flex-direction: column;
+
+  &.isCollapsedContainer {
+    height: calc(100vh - 73px);
+  }
+}
+
+.itemsContainer.isMobile {
+  height: calc(100vh - 103px);
+}
+
+.itemsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.items {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: clip;
+}
+
+.items::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-btn {
+  width: 100%;
+  margin-block-start: auto;
+  position: relative;
+  margin-bottom: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline-start: 1rem !important;
+}
+
+.logout-btn {
+  width: 100%;
+  border-radius: 0.5rem !important;
+  margin-bottom: 2rem;
+  margin-top: auto;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline-start: 1rem !important;
+}
+
+.collapsed-btn {
+  justify-content: flex-start;
+  margin-inline: 10px;
+  width: auto;
+  border-radius: 0.5rem !important;
+  justify-content: center;
+}
+
+/* list item styling starts here */
+.listItemContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  cursor: pointer;
+  /* position: relative; */
+  text-decoration: none;
+  padding: 8px 14px;
+  /* transition: margin 30ms ease-in; */
+  border-radius: 0.4rem;
+}
+
+.listItemContainer span {
+  font-family: var(--ff-secondary-reg) !important;
+  color: var(--icon-color);
+}
+
+.dropDownIcon {
+  fill: var(--white-color) !important;
+}
+
+/* when sidebar is collapsed */
+.listItemContainer.isCollapsed {
+  /* padding-bottom: 0.6rem; */
+  justify-content: center;
+}
+
+.subMenu .iscollapsed {
+  margin-left: 0px;
+}
+
+/* when item is selected */
+.active {
+  background-color: var(--background-secondary);
+  position: relative;
+}
+
+/* .active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--background-gradient);
+  border-radius: 0 0.5rem 0.5rem 0;
+} */
+
+.active span {
+  color: var(--text-color) !important;
+  font-family: var(--ff-secondary-bold) !important;
+  font-weight: 600;
+}
+
+.active .icon {
+  color: var(--text-color) !important;
+}
+
+/* when item is selected and have sub item also */
+.subActive {
+  border: none;
+  background-color: var(--white-color) !important;
+  /* margin-right: 12px; */
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.subActive::after {
+  /* content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--background-gradient);
+  border-radius: 0 0.5rem 0.5rem 0; */
+  display: none;
+}
+
+.subActive span {
+  color: var(--text-color) !important;
+  font-family: var(--ff-primary-bold);
+}
+
+.subActive .icon {
+}
+
+/*if item have submenu and submenu is opened and sidebar is not collapsed, item styling starts here*/
+.subnav {
+  background-color: transparent !important;
+}
+
+.subnav::after {
+  display: none;
+}
+
+.subnav span {
+  color: var(--white-color) !important;
+}
+
+.subnav .icon {
+  fill: var(--white-color) !important;
+}
+
+/*if item have submenu and submenu is opened andsidebar is collapsed, item styling starts here*/
+.isCollapsedSubnav {
+  border-radius: 0.5rem 0.5rem 0 0 !important;
+  background-color: white !important;
+  padding-bottom: 0px;
+  margin-top: 10px;
+  margin-inline: 10px;
+}
+
+.isCollapsedSubnav::after {
+  display: none;
+}
+
+.isCollapsedSubnav span {
+  color: #2d2e83 !important;
+}
+
+.isCollapsedSubnav .icon {
+  fill: #2d2e83 !important;
+}
+
+/*when sidebar is not collapsed  sub menu styling starts here */
+.subMenu {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.innerItemContainer {
+  cursor: pointer;
+  padding-block-end: 11px;
+}
+
+.innerItemContainer span {
+  font-family: var(--ff-secondary-reg) !important;
+  font-size: var(--fs-100);
+  color: var(--white-color);
+  margin-left: 1rem;
+}
+
+.innerItemContainer .innerIcon {
+  fill: var(--white-color);
+  color: var(--white-color);
+}
+
+/* when sidebar is collapsed Sub menu styling starts here */
+.submenuIsCollapsed {
+  background-color: white !important;
+  border-radius: 0px 0rem 0.5rem 0.5rem !important;
+  padding-inline: 8px;
+  padding-block-end: 7px;
+  margin-inline: 10px;
+}
+
+.submenuIsCollapsed .innerItemContainer span {
+  color: #2d2e83;
+}
+
+.submenuIsCollapsed .innerItemContainer .innerIcon {
+  fill: #2d2e83;
+  color: #2d2e83;
+}
+
+/* when item is selected and sidebar is not iscollapsed */
+.innerItemSubActive {
+  background-color: var(--white-color);
+  border-radius: 5px 0px 0px 5px;
+  padding: 2px;
+  /* margin-block: 11px; */
+}
+
+.innerItemSubActive span {
+  color: #214b9c !important;
+  font-family: var(--ff-secondary-reg) !important;
+}
+
+.innerItemSubActive .innerIcon {
+  fill: #214b9c !important;
+  color: #214b9c !important;
+}
+
+/* when item is selected and sidebar iscollapsed */
+.submenuIsCollapsed .innerItemSubActive {
+  background-color: #2d2e83;
+  margin-bottom: 10px;
+}
+
+.submenuIsCollapsed .innerItemSubActive span {
+  color: #214b9c !important;
+}
+
+.submenuIsCollapsed .innerItemSubActive .innerIcon {
+  fill: var(--white-color) !important;
+  color: var(--white-color) !important;
+}
+
+.notCollapsedInnercontainer {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem 0rem;
+  margin-left: 50px;
+}
+
+.isCollapsed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding-block: 8px;
+}
+
+.dropDownIcon {
+  position: absolute;
+  right: 15px;
+  top: 22%;
+  background-color: transparent;
+  fill: inherit;
+  transform: rotate(180deg);
+  transition: 0.4s;
+}
+
+.active .dropDownIcon {
+  /* margin-inline: auto; */
+  right: 15px;
+  top: 15%;
+  color: var(--white-color);
+  transform: rotate(0deg);
+}
+
+.popper {
+  position: absolute;
+  left: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  text-wrap: nowrap;
+  color: var(--white-color);
+  padding: 2px 4px;
+  text-align: center;
+  font-size: var(--fs-100);
+  z-index: 100;
+}
+
+.logoutContainer {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+
+  &.collapsedLogoutContainer {
+    padding-block: 0.3rem 0.7rem;
+  }
+}
+
+.logoutItem {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--white-color);
+}
+
+@media screen and (max-width: 992px) {
+  .toggler {
+    display: none;
+  }
+}

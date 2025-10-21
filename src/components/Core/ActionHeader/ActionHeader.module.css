@@ -1,0 +1,24 @@
+.actionHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap-reverse;
+  gap: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.heading {
+  font-size: var(--fs-400);
+  margin-bottom: 0;
+}
+
+.description {
+  font-size: var(--fs-100);
+  color: var(--secondary-text-color);
+}

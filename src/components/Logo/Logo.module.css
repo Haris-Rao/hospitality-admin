@@ -1,0 +1,41 @@
+.logo {
+  position: relative;
+  width: 57px;
+  height: 41px;
+
+  & img {
+    object-fit: contain;
+    object-position: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 90px;
+    height: 45px;
+  }
+}
+
+.footerLogo {
+  position: relative;
+  width: 160px;
+  height: 50px;
+
+  & img {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.headerLogo {
+  position: relative;
+  width: 140px;
+  height: 40px;
+
+  & img {
+    object-fit: contain;
+    object-position: center;
+  }
+  @media screen and (max-width: 600px) {
+    width: 110px;
+    height: 35px;
+  }
+}

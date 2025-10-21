@@ -1,0 +1,203 @@
+.authlayoutMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+  height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* .authlayoutMain img {
+    width: 300px;
+    height: 150px;
+    object-fit: contain;
+  } */
+
+.formHeading {
+  font-size: 35px;
+  color: var(--main-color);
+  font-family: var(--ff-primary-bold);
+  text-align: center;
+}
+
+.formDescription {
+  color: var(--secondary-text-color);
+}
+
+.wrapper {
+  width: 100%;
+  margin-inline: auto;
+  border-radius: var(--global-border-radius);
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.forgetPass {
+  text-align: center;
+  margin-top: 10px;
+  & > span {
+    cursor: pointer;
+    color: var(--primary-text-color-v1);
+    font-family: var(--ff-primary-reg);
+    font-size: 14px;
+  }
+}
+
+.login_form {
+  display: grid;
+  gap: 18px;
+}
+
+.formWrapper {
+  display: grid;
+  align-content: center;
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: 1rem;
+  position: relative;
+  background-color: var(--box-bg-color);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: var(--box-sd-secondary-btn);
+}
+
+.mainContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-color);
+  background-size: cover;
+  background-position: center right;
+  overflow: hidden;
+  background-image: url("../../assets/images/authBg.png");
+  background-repeat: no-repeat;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  gap: 0.7rem;
+  padding: 30px;
+  border-radius: 8px;
+  z-index: 1;
+  background: var(--white-color);
+  @media screen and (max-width: 620px) {
+    width: 90%;
+    padding: 20px;
+  }
+}
+.loginHeadingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 35px;
+  & h6 {
+    font-size: 24px;
+    color: var(--primary-text-color-v1);
+    font-family: var(--ff-primary-bold);
+    margin: 0;
+    text-align: center;
+  }
+  & p {
+    font-size: 14px;
+    color: var(--primary-text-color-v1);
+    font-family: var(--ff-primary-reg);
+    margin: 0;
+    text-align: center;
+  }
+  @media screen and (max-width: 480px) {
+    margin-bottom: 20px;
+    & h6 {
+      font-size: 20px;
+    }
+    & p {
+      font-size: 12px;
+    }
+  }
+}
+.logoImg {
+  object-fit: contain;
+  align-self: center;
+  width: 220px;
+  height: 80px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.forgetPass {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  & span {
+    cursor: pointer;
+    color: var(--main-color);
+  }
+}
+.OtpInput_style {
+  width: 100% !important;
+  height: 50px;
+  margin-left: 20px;
+  color: var(--primary-text-color) !important;
+  border: 1px solid var(--border-color);
+  background-color: transparent !important;
+  border-radius: var(--secondary-border-radius);
+  font-size: 24px;
+  font-family: var(--ff-primary-bold);
+  outline: none;
+}
+.loginBtn {
+  width: 100%;
+  margin-top: 25px;
+  padding-block: 12px !important;
+  border-radius: 6px !important;
+  @media screen and (max-width: 480px) {
+    margin-top: 20px;
+  }
+}
+.resendContainer {
+  text-align: center;
+  font-family: var(--ff-primary-bold);
+  color: var(--primary-text-color-v1);
+  margin-bottom: 0;
+  margin-top: 13px;
+
+  @media screen and (max-width: 395px) {
+    font-size: 12px !important;
+  }
+
+  & span {
+    cursor: pointer;
+  }
+}
+.resend {
+  font-family: var(--ff-primary-medium) !important;
+  text-decoration: underline;
+  color: var(--primary-color);
+  margin-inline-start: 2px;
+}
+.timer {
+  font-family: var(--ff-primary-bold) !important;
+  color: var(--primary-color);
+}
+@media (max-width: 578px) {
+  .OtpInput_style {
+    height: auto;
+    margin-left: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding-block: 1rem;
+  }
+}

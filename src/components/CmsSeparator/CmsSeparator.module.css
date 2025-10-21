@@ -1,0 +1,20 @@
+.separator {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-block-start: 10px;
+}
+.title {
+  text-transform: capitalize;
+  font-family: var(--ff-primary);
+  color: var(--text-color);
+  font-size: var(--fs-500);
+  margin: 4px 0px;
+  margin-inline-start: 8px;
+  font-weight: 600;
+}
+.hr {
+  border-color: var(--border-color);
+  flex-grow: 1;
+  margin: 0;
+}

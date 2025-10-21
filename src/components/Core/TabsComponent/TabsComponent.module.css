@@ -1,0 +1,151 @@
+._tabsHeading {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--tabs-bg);
+  overflow: hidden;
+  width: fit-content;
+  border-radius: 6px;
+  border: 1px solid var(--copyright-top-border-color);
+}
+
+._initialTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  background: var(--tabs-bg);
+  line-height: 1;
+  min-width: fit-content;
+
+  &.sm {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  &.md {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  &.lg {
+    padding: 13px 32px;
+    font-size: 16px;
+  }
+}
+
+._initialTab:hover {
+}
+
+._active {
+  background-color: var(--blue-haze) !important;
+
+  [data-variant="secondary"] & {
+    background-color: var(--background-secondary) !important;
+  }
+
+  & .tabText {
+    color: var(--tab-text-color) !important;
+    opacity: 1;
+    font-weight: 500;
+  }
+}
+
+.tabText {
+  color: var(--icon-color);
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.4;
+  text-align: center;
+}
+
+._tabsHeading[data-variant="secondary"] {
+  ._initialTab {
+    border: 1px solid var(--main-color);
+    background-color: transparent;
+    color: var(--main-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+  }
+  ._active {
+    background-color: var(--main-color) !important;
+    color: var(--white-color) !important;
+    border: 1px solid var(--main-color) !important;
+    & .tabText {
+      color: var(--white-color) !important;
+    }
+  }
+}
+._tabsHeading[data-variant="settings"] {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  border: 1px solid var(--settings-tabs-border-color);
+  background-color: unset;
+  padding: 0;
+  box-shadow: unset;
+  height: fit-content;
+  ._initialTab {
+    background-color: transparent;
+    border-radius: 0;
+    width: 100%;
+    justify-content: flex-start;
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--settings-tabs-border-color);
+    }
+    & .tabText {
+      color: #919191 !important;
+    }
+  }
+
+  ._active {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
+    & .tabText {
+      color: var(--white-color) !important;
+    }
+  }
+}
+
+._tabsHeading[data-variant="secondary"] {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  height: fit-content;
+
+  ._initialTab {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 16px;
+    transition: all 0.2s ease;
+
+    & .tabText {
+      color: #808080;
+      font-weight: 400;
+      opacity: 1;
+    }
+  }
+
+  ._active {
+    background-color: #ffede4 !important;
+    border: none !important;
+
+    & .tabText {
+      color: var(--secondary-color) !important;
+      font-weight: 500;
+    }
+  }
+}

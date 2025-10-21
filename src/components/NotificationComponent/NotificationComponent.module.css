@@ -1,0 +1,72 @@
+.notificationMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px;
+  border-bottom: 1px solid var(--copyright-top-border-color);
+
+  @media screen and (max-width: 450px) {
+    align-items: normal;
+    flex-direction: column;
+  }
+}
+
+.seen {
+  background-color: var(--unseen-bg-color) !important;
+}
+
+.noticationLeftBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notificationDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.description {
+  color: var(--secondary-text-color);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.imgBox {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  flex-shrink: 0;
+
+  & img {
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+.notificationRightBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  & p {
+    text-wrap: nowrap;
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 450px) {
+    justify-content: flex-end;
+  }
+}

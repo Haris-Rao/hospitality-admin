@@ -1,0 +1,75 @@
+.popperContent {
+  background-color: var(--background-secondary);
+  padding: 14px 4px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25));
+  z-index: 100;
+  border-radius: var(--border-radius);
+
+  &.popperInsideElement {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  & .list {
+    display: grid;
+  }
+}
+
+.popperTrigger {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.popperPortal {
+  background: var(--background);
+  /* border-radius: var(--global-border-radius); */
+  z-index: 200;
+}
+
+.menuItem {
+  color: var(--primary-text-color);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 10px;
+  line-height: 1;
+  cursor: pointer;
+
+  /* &:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: var(--input-border-radius);
+    padding-block: 5px;
+  } */
+  &:not(:last-child) {
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    /* border-bottom: 1px solid var(--border-color); */
+  }
+}
+
+.popperParent {
+  z-index: 300;
+}
+
+.popperArrow {
+  fill: var(--white-color);
+  width: 70px;
+  height: 30px;
+}
+
+.children_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #f6f7f9;
+  border-radius: 5px;
+
+  & svg {
+    color: var(--primary-text-color-v1);
+  }
+}

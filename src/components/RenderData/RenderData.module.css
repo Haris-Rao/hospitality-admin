@@ -1,0 +1,24 @@
+.renderData {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.label {
+	font-size: var(--fs-100);
+	color: var(--secondary-text-color);
+	margin-bottom: 0;
+}
+
+.value {
+	margin-bottom: 0;
+}
+
+p.value {
+	font-size: var(--fs-200);
+	color: var(--text-color);
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 180px;
+}

@@ -1,0 +1,133 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pageMain {
+  height: calc(100vh - 68px);
+  overflow-x: clip;
+  overflow-y: auto;
+  overflow-clip-margin: 20px;
+  border-radius: var(--section-border-radius);
+  padding: 1rem;
+
+  &.noPageBg:has(div[data-no-bg]) {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 992px) {
+    .pageMain {
+      height: calc(100vh - 105px);
+    }
+  }
+}
+
+.GiHamburgerMenuMobile {
+  font-size: 24px;
+  color: var(--text-color);
+  cursor: pointer;
+  /* margin-inline-end: auto; */
+  flex-shrink: 0;
+}
+
+.sidebarDiv {
+  width: 270px;
+}
+
+.iscollapsed {
+  width: 80px;
+}
+
+.contentDiv {
+  width: calc(100% - 270px);
+  background-color: light-dark(#F4F6F8, #1C1C1C);
+}
+
+.contentIsCollapsed {
+  width: calc(100% - 80px);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  color: var(--text-color);
+  line-height: 0;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-color);
+}
+
+.links a {
+  color: var(--text-color);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.links .seprator {
+  background-color: var(--border-color);
+  width: 1px;
+  display: inline-block;
+  height: 1rem;
+}
+
+/* @media screen and (max-width: 1440px) {
+  .sidebarDiv {
+    width: 300px;
+  }
+
+  .contentDiv {
+    width: calc(100% - 300px);
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .sidebarDiv {
+    width: 280px;
+  }
+
+  .contentDiv {
+    width: calc(100% - 280px);
+  }
+} */
+
+@media screen and (max-width: 1100px) {
+  .sidebarDiv {
+    width: 250px;
+  }
+
+  .contentDiv {
+    width: calc(100% - 266px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contentOnMobileDiv {
+    width: calc(100vw - 0rem);
+  }
+
+  .sidebarOnMobileDiv {
+    position: absolute;
+  }
+
+  .footer {
+    text-align: center;
+    gap: 1rem;
+    flex-direction: column;
+  }
+}

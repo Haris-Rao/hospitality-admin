@@ -1,0 +1,25 @@
+.faqSection {
+  max-width: 900px;
+  margin-inline: auto;
+}
+.sectionHeading {
+  margin-bottom: 2rem !important;
+}
+.faqSection__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.heading p,
+.heading span,
+.heading strong {
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  color: #020817 !important;
+  white-space: nowrap;
+}
+
+.heading strong {
+  color: #2966f4 !important;
+}

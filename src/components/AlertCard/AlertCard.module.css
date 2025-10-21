@@ -1,0 +1,60 @@
+/* Alert Card Styles */
+.alertCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--whisper-white);
+  border-radius: 10px;
+  border: 1px solid var(--copyright-top-border-color);
+  border-left: 4px solid var(--danger-color-v2);
+  padding: 14px;
+  position: relative;
+  min-width: 275px;
+}
+
+.alertHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.alertIcon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  & h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 0;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  border-radius: 7px;
+  background-color: var(--blue-haze);
+  cursor: pointer;
+}
+
+.alertContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 28px;
+
+  & p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin: 0;
+    opacity: 0.5;
+    max-width: 240px;
+  }
+}

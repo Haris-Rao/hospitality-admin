@@ -1,0 +1,110 @@
+.videoPlayer video {
+  object-fit: cover;
+}
+.pdfView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.pdfView > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.pdfView span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: var(--yellow-color) !important;
+  border-radius: 5px;
+  padding: 0px 6px;
+}
+.pdfView p {
+  font-size: 13px !important;
+  margin-bottom: 0;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  padding: 0px 6px;
+}
+.media_section {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.media_section .image:nth-child(3):last-child {
+  grid-column: 1 / -1;
+}
+.image {
+  overflow: hidden;
+  width: 100%;
+  height: 240px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+
+  position: relative;
+  background-color: var(--input-bg);
+  border-radius: 10px;
+  cursor: pointer;
+  /* [data-theme="dark"] & {
+    background-color: var(--card-bg);
+    border: 0px solid var(--main-color);
+    box-shadow: 0px 2px 25px 0px rgba(0, 0, 0, 0.05);
+  } */
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.show_more {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show_more::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.4;
+
+  cursor: pointer;
+  z-index: 1;
+}
+.show_more p {
+  font-size: 22px;
+  color: var(--white-color);
+  font-family: var(--ff-primary-semiBold);
+  z-index: 2;
+}
+@media screen and (max-width: 550px) {
+  .image {
+    height: 180px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .media_section {
+    grid-template-columns: 1fr;
+  }
+}

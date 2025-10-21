@@ -1,0 +1,29 @@
+.callToActionItem {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  & p {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+}
+
+.callToActionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 6px;
+  background-color: color-mix(in srgb, var(--secondary-color), transparent 80%);
+}
+
+.callToActionIconImage {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  & img {
+    object-fit: contain;
+  }
+}

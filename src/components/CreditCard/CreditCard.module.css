@@ -1,0 +1,124 @@
+.creditCard {
+  position: relative;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+/* Brand background colors */
+.visaBg {
+  background-color: var(--card-background);
+}
+
+.mastercardBg {
+  background: linear-gradient(to right, #eb001b, #ff5f00, #f79e1b);
+}
+
+.amexBg {
+  background-color: #016fd0;
+}
+
+.discoverBg {
+  background-color: #ff7f32;
+}
+
+.unionpayBg {
+  background-color: #009cde;
+}
+
+.jcbBg {
+  background-color: #009bce;
+}
+
+.otherBg {
+  background-color: #b0b0b0;
+}
+
+.statusPills {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pill {
+  background-color: var(--main-color);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  background-color: var(--main-color);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  transition: all 300ms;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trashIcon {
+  color: var(--destructive);
+}
+
+.brandName {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.brandName h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white-color);
+  letter-spacing: 0.05em;
+}
+
+.cardNumber {
+  margin-bottom: 1.5rem;
+}
+
+.cardNumberWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.asterisk {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.asteriskMargin {
+  margin-right: 0.5rem;
+}
+
+.lastFour {
+  margin-left: 0.25rem;
+}
+
+.expiration {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.expirationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  & p {
+    color: var(--white-color);
+  }
+}

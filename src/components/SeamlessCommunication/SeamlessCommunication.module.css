@@ -1,0 +1,26 @@
+.mainWrapper {
+  margin-block: 80px;
+  & > h2 {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 80px;
+    color: var(--text-color);
+    margin-block-end: 0;
+    & > strong {
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+  }
+  @media screen and (max-width: 576px) {
+    & > h2 {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    & > h2 {
+      font-size: 30px;
+      line-height: 45px;
+    }
+  }
+}

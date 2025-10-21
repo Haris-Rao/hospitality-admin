@@ -1,0 +1,40 @@
+.dateInput {
+  display: flex;
+  flex-direction: column;
+
+  &.inline {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.DayPickerInput {
+  background-color: var(--background-section);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+
+  & > div {
+    --rdp-accent-color: var(--primary-color);
+    --rdp-accent-background-color: var(--background-quaternary);
+    --rdp-selected-border: 2px solid var(--primary-color);
+    --rdp-day_button-border-radius: 6px;
+    --rdp-accent-background-color: var(--background-quaternary);
+    --rdp-accent-background-color: var(--background-quaternary);
+    --rdp-range_middle-background-color: var(--background-quaternary);
+    --rdp-range_middle-background-color: var(--background-quaternary);
+    --rdp-day_button-border-radius: 50%;
+
+    @media (max-width: 480px) {
+      --rdp-day-width: 30px;
+      --rdp-day-height: 30px;
+      --rdp-day_button-height: 30px;
+      --rdp-day_button-width: 100%;
+    }
+  }
+}
+
+.range {
+  min-width: 250px;
+}

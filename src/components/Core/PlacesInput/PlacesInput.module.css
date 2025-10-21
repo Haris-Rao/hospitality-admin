@@ -1,0 +1,92 @@
+.popoverTrigger {
+  background: var(--input-background-color);
+  outline: none;
+  border-radius: var(--input-border-radius);
+  font-family: var(--ff-primary-reg);
+  font-size: var(--fs-base);
+  background-color: var(--input-background-color);
+  border-radius: var(--input-border-radius);
+  border: var(--input-border);
+  padding: var(--input-padding-md);
+  width: 100%;
+  text-align: left;
+  color: color-mix(in srgb, var(--text-color) 40%, transparent);
+  &.errorTrigger {
+    border: 1px solid red;
+  }
+  & > span {
+    display: block;
+    position: relative;
+
+    & > span {
+      position: absolute;
+      right: 0rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.popoverContent {
+  background: var(--input-background-color);
+  border: 1px solid var(--input-border-color);
+  border-radius: 8px;
+  width: var(--radix-popover-trigger-width, 300px);
+  overflow: auto;
+  z-index: 10;
+  padding: 0.5rem;
+}
+
+.popoverContent .cmdk-dialog {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.popoverContent .cmdkDialog {
+  background: var(--input-background-color);
+}
+
+.popoverContent .cmdkInput {
+  padding: 8px;
+  border: none;
+  outline: none;
+  background: var(--input-background-color);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: 100%;
+  border-radius: var(--btn-border-radius);
+  border: 1px solid var(--input-border-color);
+}
+
+.popoverContent {
+  & [cmdk-loading] {
+    color: var(--text-color);
+  }
+
+  & [cmdk-empty] {
+    color: var(--text-color);
+  }
+}
+
+.popoverContent .cmdk-item {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.popoverContent .cmdk-item:hover {
+  background: #e5e7eb;
+  /* Slightly darker gray */
+}
+.cmdkItem {
+  cursor: pointer;
+  padding-block: 2px;
+}
+.error {
+  margin-top: 4px;
+  color: red;
+  right: 1rem;
+  z-index: 1;
+  font-size: 14px;
+}

@@ -1,0 +1,54 @@
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+  background-color: var(--background);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--copyright-top-border-color);
+  @media screen and (max-width: 425px) {
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+.image__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--background-section);
+}
+
+.imageDiv {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.image {
+  object-fit: contain;
+}
+.featureCard__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @media screen and (max-width: 425px) {
+    gap: 16px;
+  }
+
+  & h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  & p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color);
+  }
+}

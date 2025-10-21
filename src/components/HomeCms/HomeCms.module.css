@@ -1,0 +1,22 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--background-quaternary);
+}

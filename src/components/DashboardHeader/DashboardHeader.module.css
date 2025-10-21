@@ -1,0 +1,19 @@
+.dashboardHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.filterContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.heading {
+  font-size: var(--fs-500);
+  margin-bottom: 0;
+}
+.subHeading {
+  font-size: var(--fs-200);
+  color: var(--secondary-text-color);
+}

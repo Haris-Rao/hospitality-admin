@@ -1,0 +1,25 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & > p {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--link-color);
+      cursor: pointer;
+      opacity: 0.6;
+    }
+    & > span {
+      font-size: 13px;
+      color: var(--link-color);
+    }
+  }
+}
+.active {
+  color: var(--text-color) !important;
+}

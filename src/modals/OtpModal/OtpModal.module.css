@@ -1,0 +1,71 @@
+.heading > h6 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--main-color) !important;
+  font-family: var(--ff-primary-bold);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.OtpInput_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  & p {
+    font-size: 16px;
+    color: var(--primary-text-color);
+    margin-bottom: 0;
+
+    @media screen and (max-width: 360px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.OtpInput_style {
+  width: 100% !important;
+  height: 50px;
+  margin-left: 20px;
+  color: var(--primary-text-color) !important;
+  border: 1px solid var(--secondary-color);
+  background-color: transparent !important;
+  border-radius: var(--global-border-radius);
+  font-size: 24px;
+  font-weight: bold;
+  outline: none;
+}
+.resendContainer {
+  text-align: center;
+  font-family: var(--ff-primary-bold);
+  color: var(--primary-text-color);
+  margin-bottom: 0;
+
+  @media screen and (max-width: 395px) {
+    font-size: 12px !important;
+  }
+
+  & span {
+    cursor: pointer;
+  }
+}
+.resend {
+  font-family: var(--ff-primary-bold) !important;
+  text-decoration: underline;
+  color: var(--main-color);
+  margin-inline-start: 2px;
+}
+.timer {
+  font-family: var(--ff-primary-bold) !important;
+  color: var(--main-color);
+}
+.verify_btn {
+  width: 100%;
+}
+
+@media (max-width: 578px) {
+  .OtpInput_style {
+    height: auto;
+    margin-left: 12px;
+  }
+}

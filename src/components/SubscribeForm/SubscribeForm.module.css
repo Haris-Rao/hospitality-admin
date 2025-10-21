@@ -1,0 +1,23 @@
+.subscribeForm {
+  border: 1px solid light-dark(#d2d2d2, #262626);
+  background: light-dark(#eee, #141414);
+  max-width: 360px;
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  border-radius: 12px;
+  padding: 1px 2px;
+  & > div {
+    flex: 2;
+  }
+}
+.sendBtn {
+  padding-block: 11px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & svg {
+    color: var(--icon-color);
+  }
+}

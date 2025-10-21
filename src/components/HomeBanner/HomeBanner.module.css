@@ -1,0 +1,169 @@
+.bannerContainer {
+  padding: 1rem;
+  padding-bottom: 100px;
+}
+
+.bannerBackground {
+  min-height: 600px;
+  padding-top: 100px;
+  overflow: hidden;
+  position: relative;
+  perspective: 1000px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    background-image: linear-gradient(
+      to top,
+      light-dark(#ffffff, #000000),
+      transparent
+    );
+    bottom: 0;
+    z-index: 1;
+  }
+
+  & .gridWrapper {
+    position: absolute;
+    inset: 0;
+    height: calc(100% - 100px);
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: calc(var(--border-radius) * 2);
+    isolation: isolate;
+    background-color: var(--background-secondary);
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+          var(--primary-color) 0.5px,
+          transparent 0.5px,
+          transparent calc(100% - 0.5px),
+          var(--primary-color) calc(100% - 0.5px)
+        ),
+        linear-gradient(
+          90deg,
+          var(--primary-color) 0.5px,
+          transparent 0.5px,
+          transparent calc(100% - 0.5px),
+          var(--primary-color) calc(100% - 0.5px)
+        );
+      background-size: 10% 10%;
+      background-repeat: space;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      transform-origin: 50% 100%;
+      transform: translateY(1px) scale(1.2) rotateX(40deg);
+      opacity: 0.3;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+          to top,
+          color-mix(
+            in srgb,
+            var(--primary-color),
+            light-dark(#ffffff, #000000) 60%
+          ),
+          transparent
+        ),
+        linear-gradient(to bottom, light-dark(#ffffff, #131315), transparent);
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      transform-origin: 50% 0%;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  margin-top: 2rem;
+}
+
+.content {
+  & .__heading_description {
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  & strong {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  & h1 {
+    font-size: clamp(calc(50px / 1.5), 4vw, 50px);
+    line-height: 1.4;
+  }
+
+  & p {
+    font-size: clamp(calc(22px / 1.5), 4vw, 22px);
+    line-height: 1.4;
+  }
+}
+
+.image__wrapper {
+  position: relative;
+  margin-top: 4rem;
+  max-width: 1100px;
+  margin-inline: auto;
+  margin-bottom: -4rem;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    width: 100%;
+    aspect-ratio: 1/2.8;
+    z-index: -1;
+    transform-origin: 50% 0%;
+    border-radius: var(--border-radius);
+  }
+
+  &::before {
+    transform: translateY(-30px) scale(0.9);
+    z-index: -1;
+    background-color: light-dark(#e6f2ff, #434343);
+  }
+
+  &::after {
+    transform: translateY(-15px) scale(0.95);
+    z-index: -1;
+    background-color: light-dark(#cce5ff, #343434);
+  }
+
+  &.lightImage,
+  &.darkImage {
+    display: none;
+    height: 500px;
+    width: 100%;
+
+    & img {
+      object-fit: cover;
+      object-position: top left;
+    }
+  }
+
+  [data-theme="light"] &.lightImage {
+    display: block;
+  }
+
+  [data-theme="dark"] &.darkImage {
+    display: block;
+  }
+}

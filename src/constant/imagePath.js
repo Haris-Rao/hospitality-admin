@@ -1,0 +1,11 @@
+export { default as logo } from "../assets/images/Logo_Black.png";
+export { default as logoIcon } from "../assets/images/icon.png";
+export { default as UserProfile } from "../assets/images/user_avatar.png";
+export { default as user_img } from "../assets/images/user_img.png";
+export { default as parking_card_img1 } from "../assets/images/parking_card_img1.png";
+export { default as user_image } from "../assets/images/user_image.png";
+export { default as userImage } from "../assets/images/user-avatar.png";
+export { default as profileImg } from "../assets/images/user_image.png";
+export { default as airport_image } from "../assets/images/airport.png";
+export { default as airport_image_full } from "../assets/images/airport_image.png";
+export { default as section_image } from "../assets/images/sectionImg.png";

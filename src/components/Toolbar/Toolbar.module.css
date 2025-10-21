@@ -1,0 +1,29 @@
+.toolbar {
+	border: 1px solid color-mix(in srgb, var(--border-color), light-dark(#ffffff, #222) 50%);
+	display: flex;
+	border-radius: 6px;
+	width: fit-content;
+	overflow: hidden;
+}
+
+.tool {
+	padding: 0.3rem 0.5rem;
+	cursor: pointer;
+	transition: background-color 0.1s ease-in;
+
+	&.disabled * {
+		opacity: 0.5;
+	}
+
+	&:hover {
+		background-color: color-mix(in srgb, var(--border-color), transparent 80%);
+	}
+
+	&.active {
+		background-color: color-mix(in srgb, var(--border-color), transparent 50%);
+	}
+
+	&:not(:last-child) {
+		border-right: 1px solid color-mix(in srgb, var(--border-color), light-dark(#ffffff, #222) 50%);
+	}
+}

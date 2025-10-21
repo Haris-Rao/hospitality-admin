@@ -1,0 +1,14 @@
+:root {
+  --_padding-y-md: 10px;
+  --_padding-y-sm: 6px;
+  --_padding-x-md: 13px;
+  --_padding-x-sm: 12px;
+  --_padding-x-lg: 16px;
+  --input-padding-lg: var(--_padding-y-lg) var(--_padding-x-lg);
+  --input-padding-md: var(--_padding-y-md) var(--_padding-x-md);
+  --input-padding-sm: var(--_padding-y-sm) var(--_padding-x-sm);
+  --input-border-radius: 7px;
+  --input-border-radius-rounded: 50px;
+  --input-background-color: light-dark(#ffffff, #1e1e20);
+  --input-border: 1px solid var(--input-border-color);
+}

@@ -1,0 +1,52 @@
+.iconBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #EEEFF0;
+  padding: 14px;
+  & > * {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 500;
+  margin-inline-start: 8px;
+  @media screen and (max-width: 991px){
+    font-size: 16px;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover .iconBox {
+}
+
+/* Media Queries */
+@media screen and (max-width: 991px) {
+  .iconBox {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}

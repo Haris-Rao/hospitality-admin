@@ -1,0 +1,11 @@
+.container {
+  position: relative;
+  margin-bottom: 20px;
+  & .ticker {
+    position: absolute;
+    top: -19px;
+    left: -19px;
+
+    z-index: 1000;
+  }
+}

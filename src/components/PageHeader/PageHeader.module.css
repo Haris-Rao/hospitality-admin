@@ -1,0 +1,31 @@
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+  }
+}
+.pageHeaderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  & > h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+  }
+}
+
+.pageHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  flex-wrap: wrap;
+}

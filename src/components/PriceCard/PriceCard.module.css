@@ -1,0 +1,256 @@
+/* Price Card Container */
+.priceCard {
+  background-color: var(--background-quaternary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--card-border-color);
+  box-shadow: var(--card-boxshadow-color);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.activePriceCard {
+  border: 3px solid #2cc467;
+}
+.secondaryPriceCard {
+  padding: 1.5rem;
+  width: fit-content;
+}
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  color: var(--white-color);
+  font-weight: bold;
+  font-size: var(--fs-400);
+}
+
+.title {
+  color: var(--text-color);
+  font-size: var(--fs-500);
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+.popularBadge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--primary-color);
+  color: var(--white-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: var(--fs-100);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Price Section */
+.priceSection {
+  text-align: left;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  color: var(--text-color);
+  font-size: var(--fs-header-600);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.period {
+  color: var(--secondary-text-color);
+  font-size: var(--fs-200);
+  font-weight: 400;
+}
+
+.description {
+  color: var(--secondary-text-color);
+  font-size: var(--fs-100);
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* Button Section */
+.buttonSection {
+  display: flex;
+  justify-content: center;
+  & button {
+    width: 100% !important;
+  }
+}
+
+.ctaButton {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--white-color);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.875rem 2rem;
+  font-size: var(--fs-btn);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Features Section */
+.featuresSection {
+  margin-top: 1rem;
+}
+
+.separator {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.separatorText {
+  background-color: var(--background-quaternary);
+  color: var(--secondary-text-color);
+  padding: 0 1rem;
+  font-size: var(--fs-100);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checkmark {
+  background-color: var(--secondary-color);
+  font-weight: bold;
+  font-size: var(--fs-200);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  color: var(--white-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureText {
+  color: var(--text-color);
+  font-size: var(--fs-100);
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .priceCard {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .price {
+    font-size: var(--fs-header-500);
+  }
+
+  .title {
+    font-size: var(--fs-300);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .priceCard {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .price {
+    font-size: var(--fs-500);
+  }
+
+  .title {
+    font-size: var(--fs-300);
+  }
+
+  .ctaButton {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--fs-100);
+  }
+}
+
+/* Dark theme specific adjustments */
+@media (prefers-color-scheme: dark) {
+  .separatorText {
+    background-color: var(--background-quaternary);
+  }
+}
+
+/* Light theme specific adjustments */
+@media (prefers-color-scheme: light) {
+  .separatorText {
+    background-color: var(--background-quaternary);
+  }
+}

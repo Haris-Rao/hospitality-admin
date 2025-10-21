@@ -1,0 +1,66 @@
+/*voiceMail card */
+.voiceMainCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--whisper-white);
+  border-radius: 10px;
+  border: 1px solid var(--copyright-top-border-color);
+  padding: 14px;
+  min-width: 480px;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.userImage {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--background-quaternary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & img {
+    object-fit: cover;
+  }
+  & > p {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0;
+  }
+}
+.voiceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  & > span {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 0;
+    opacity: 0.5;
+  }
+  & > p {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  border-radius: 7px;
+  background-color: var(--blue-haze);
+  cursor: pointer;
+}

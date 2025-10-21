@@ -1,0 +1,143 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &.inline {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 10px;
+    align-items: center;
+    @media (max-width: 578px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.labelOnTop:has(input:focus) label {
+  top: 1rem;
+}
+
+.labelOnTop.hasValue label {
+  top: 1rem;
+}
+
+.inputBox {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-input);
+  padding: var(--input-padding-md);
+  width: 100%;
+  border: var(--input-border);
+  transition: all 0.3s ease-in-out;
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+}
+
+.inputBox[data-variant="secondary"] {
+  background-color: var(--login-input-background-color);
+  border: 1px solid var(--copyright-top-border-color);
+}
+
+.inputBox[data-size="sm"] {
+  padding: var(--input-padding-sm);
+}
+
+.hasValue .labelOnTop__input {
+  padding-block-start: 1.8rem;
+}
+
+.labelOnTop__input:focus {
+  padding-block-start: 1.8rem;
+}
+
+.inputBox:focus-within {
+  outline: none !important;
+}
+
+.inputBox:disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.noBorder {
+  border: none;
+}
+
+.inputPassContainer {
+  display: flex;
+  position: relative;
+}
+
+.inputPassContainer input::placeholder {
+  font-family: var(--ff-primary-semibold);
+  font-size: var(--fs-100);
+  color: var(--placeholder-color);
+}
+
+.inputPassContainer input:disabled {
+  background-color: var(--disabled-input-color);
+  color: #1e1e1e;
+  user-select: none;
+}
+
+.rightIcon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: max-content;
+}
+
+.inputPassContainer .passwordIcon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  bottom: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.errorText {
+  margin-top: 4px;
+  color: red;
+  width: fit-content;
+
+  font-size: 14px;
+}
+
+.offsetLeftError {
+  right: 56px;
+}
+
+.disabled {
+  color: var(--disabled-label-color);
+}
+
+.leftIconBox {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: max-content;
+  line-height: 1;
+  & svg {
+    color: var(--footer-sub-heading);
+  }
+}
+
+.inputBox:not([type="number"])::-webkit-outer-spin-button,
+.inputBox:not([type="number"])::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (max-width: 578px) {
+  .labelText {
+    font-size: var(--fs-input);
+  }
+}
+
+.rangeValue {
+  font-size: 14px;
+  color: #222;
+}

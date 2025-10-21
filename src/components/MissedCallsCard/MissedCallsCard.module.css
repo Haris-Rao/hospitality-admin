@@ -1,0 +1,67 @@
+/* Missed Calls Card Styles */
+
+.mainWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: var(--background-section);
+  border-radius: 12px;
+  border: 1px solid var(--copyright-top-border-color);
+  padding: 20px;
+}
+
+.missedCallsCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--btn-bg-color);
+  & > svg {
+    color: var(--primary-color);
+    font-size: 20px;
+  }
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 16px;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  & > span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.5;
+  }
+
+  & > h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+  }
+}
+
+.chartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

@@ -1,0 +1,14 @@
+.priceCardContainer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: flex-start;
+
+  gap: 20px;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+  .priceCardContainerHeading {
+  }
+}
