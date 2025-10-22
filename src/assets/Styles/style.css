@@ -208,7 +208,7 @@ html {
 
 body {
   display: flow-root;
-  background: var(--background);
+  background: var(--dashboard-background);
   font-family: var(--ff-primary-reg);
 }
 
@@ -308,7 +308,7 @@ body ::-webkit-scrollbar {
 
 body ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   border-radius: 10px;
 }
 

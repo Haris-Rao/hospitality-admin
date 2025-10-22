@@ -42,6 +42,7 @@ function HotelManagement() {
           showFilter={true}
           buttonLabel="Create"
           buttonIcon={<FaPlus />}
+          onClick={() => navigate("/hotel-management/create")}
           children={
             <div style={{ padding: "16px" }}>
               <FilterOption

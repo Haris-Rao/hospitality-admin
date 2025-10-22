@@ -97,7 +97,7 @@ function InfoCard({
             </div>
             <div className={classes.infoWrapper}>
               <p>Call Status</p>
-              <Statuses status={data?.callStatus || "active"} />
+              <Statuses status={data?.callStatus || "Answered"} />
             </div>
           </>
         )}

@@ -97,7 +97,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
-
+.bottomSection,
 .gridSection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

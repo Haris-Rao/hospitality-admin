@@ -9,6 +9,10 @@ const HotelManagement = lazy(() => import("../pages/HotelManagement"));
 const HotelDetails = lazy(() =>
   import("../pages/HotelManagement/HotalDetails")
 );
+const ProfileSettings = lazy(() => import("../pages/ProfileSettings"));
+
+const CreateHotel = lazy(() => import("../pages/HotelManagement/CreateHotel"));
+
 export const routes = [
   {
     path: "/login",
@@ -43,5 +47,21 @@ export const routes = [
     showInSidebar: false,
     title: "Hotel Details",
     element: <HotelDetails />,
+  },
+  {
+    path: "/hotel-management/create",
+    exact: true,
+    protected: true,
+    showInSidebar: false,
+    title: "Create Hotel",
+    element: <CreateHotel />,
+  },
+  {
+    path: "/profile-setting",
+    exact: true,
+    protected: true,
+    showInSidebar: false,
+    title: "Profile Settings",
+    element: <ProfileSettings />,
   },
 ];

@@ -1,11 +1,11 @@
 "use client";
 import { imageUrl } from "@/config/apiUrl";
-import Image from "next/image";
 import { useRef } from "react";
 import { Spinner } from "react-bootstrap";
 import { TbEdit } from "react-icons/tb";
 import { toast } from "react-toastify";
 import classes from "./profilewitheditbutton.module.css";
+import { profileImg } from "@/constant/imagePath";
 
 export const ProfileWithEditButton = ({
   updateImage,
@@ -20,25 +20,24 @@ export const ProfileWithEditButton = ({
       <div className={`${classes.profileEditContainer} ${parentClass}`}>
         {updateImage?.name ? (
           <div className={`${classes.profileEditImage_box}`}>
-            <Image
-              layout="fill"
+            <img
               className={`${classes.profileEditImage}`}
               src={URL.createObjectURL(updateImage)}
+              alt="profileImage"
             />
           </div>
         ) : updateImage == null ? (
           <div className={`${classes.profileEditImage_box}`}>
-            <Image
-              layout="fill"
+            <img
               className={`${classes.profileEditImage}`}
-              src={"/images/profile.png"}
+              src={profileImg}
+              alt="profileImage"
             />
           </div>
         ) : (
           typeof updateImage == "string" && (
             <div className={`${classes.profileEditImage_box}`}>
-              <Image
-                layout="fill"
+              <img
                 className={`${classes.profileEditImage}`}
                 // src={imageUrl(updateImage)}
                 src={updateImage}

@@ -257,3 +257,14 @@ export const minutesOptions = (function () {
 
   return options;
 })();
+
+export const profileSettingTabs = [
+  {
+    label: "Account",
+    value: "account",
+  },
+  {
+    label: "Password",
+    value: "password",
+  },
+];
