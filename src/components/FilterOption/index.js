@@ -12,15 +12,6 @@ export default function FilterOption({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOptionClick = (option) => {
-    onSelect(option);
-    setIsOpen(false);
-  };
-
-  const selectedOption = options.find(
-    (option) => option.value === selectedValue
-  );
-
   return (
     <div className={`${classes.filterOptionContainer} ${className}`}>
       <div className={classes.optionsContainer}>
@@ -30,7 +21,7 @@ export default function FilterOption({
             className={`${classes.filterOption} ${
               selectedValue === option.value ? classes.selected : ""
             }`}
-            onClick={() => handleOptionClick(option)}
+            onClick={() => {}}
           >
             <span className={classes.optionLabel}>{option.label}</span>
           </div>
