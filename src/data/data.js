@@ -268,3 +268,9 @@ export const profileSettingTabs = [
     value: "password",
   },
 ];
+
+export const statusOptions = [
+  { label: "All", value: "all" },
+  { label: "Active", value: "active" },
+  { label: "Inactive", value: "inactive" },
+];

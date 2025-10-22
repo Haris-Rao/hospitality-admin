@@ -5,7 +5,7 @@ import ToggleSwitch from "../ToggleSwitch";
 import classes from "./InfoDetailCard.module.css";
 
 function InfoDetailCard({ data }) {
-  const [chatEnabled, setChatEnabled] = useState(data.chatEnabled);
+  const [chatEnabled, setChatEnabled] = useState(data?.chatEnabled);
 
   return (
     <div className={classes.mainContainer}>
@@ -16,8 +16,8 @@ function InfoDetailCard({ data }) {
             <img src={profileImg} alt="hotel" width={48} height={48} />
           </div>
           <div className={classes.profileInfo}>
-            <h3>{data.name}</h3>
-            <p>{data.email}</p>
+            <h3>{data?.name}</h3>
+            <p>{data?.email}</p>
           </div>
         </div>
 
@@ -28,7 +28,7 @@ function InfoDetailCard({ data }) {
             <p>Phone Number</p>
           </div>
           <div className={classes.infoContent}>
-            <span>{data.phoneNumber}</span>
+            <span>{data?.phoneNumber}</span>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ function InfoDetailCard({ data }) {
             <p>Website</p>
           </div>
           <div className={classes.infoContent}>
-            <span>{data.website}</span>
+            <span>{data?.website}</span>
           </div>
         </div>
 
@@ -50,7 +50,7 @@ function InfoDetailCard({ data }) {
             <p>Location</p>
           </div>
           <div className={classes.infoContent}>
-            <span>{data.location}</span>
+            <span>{data?.location}</span>
           </div>
         </div>
 
@@ -61,7 +61,7 @@ function InfoDetailCard({ data }) {
             <p>Current Plan</p>
           </div>
           <div className={classes.infoContent}>
-            <span>{data.currentPlan}</span>
+            <span>{data?.currentPlan}</span>
           </div>
         </div>
       </div>

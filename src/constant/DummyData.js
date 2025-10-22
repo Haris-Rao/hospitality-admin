@@ -2,7 +2,12 @@ import { FaRegEye } from "react-icons/fa6";
 import { GoPencil } from "react-icons/go";
 import { GrStatusCritical } from "react-icons/gr";
 import { HiOutlineTrash } from "react-icons/hi2";
-import { parking_card_img1, profileImg, user_image } from "./imagePath";
+import {
+  airport,
+  parking_card_img1,
+  profileImg,
+  user_image,
+} from "./imagePath";
 import { BarsCardIcon, LineCardIcon } from "@/components/Icons/apple_icon";
 import { IoCallOutline } from "react-icons/io5";
 
@@ -476,8 +481,40 @@ export const dashboardData = {
     })),
 
   donutChartData: [
-    { name: "Package 1", value: 12 },
-    { name: "Package 2", value: 18 },
-    { name: "Package 3", value: 40 },
+    { name: "Current Month Billing", value: 30 },
+    { name: "Last Month Billing", value: 30 },
   ],
+};
+
+export const hotelManagementData = Array(10)
+  .fill(0)
+  .map((_, index) => ({
+    _id: index + 1,
+    image: airport,
+    name: "Liam Carter",
+    date: new Date(),
+    dailedRoom: "Kitchen",
+    roomNumber: 302,
+  }));
+
+export const hotelDetailsPageData = {
+  callLogs: Array(12)
+    .fill(0)
+    .map((_, index) => ({
+      _id: index + 1,
+      name: "Benjamin David",
+      date: new Date(),
+      duration: "10 minutes",
+      callType: "Inbound",
+      callStatus: "active",
+    })),
+  hotelDetails: {
+    name: "Lakeside Inn",
+    email: "Levin.J@gmail.com",
+    phoneNumber: "+1 0678 9012",
+    website: "www.lakeside.in",
+    location: "8502 Preston Rd. I...",
+    currentPlan: "$49 - Monthly",
+    chatEnabled: true,
+  },
 };

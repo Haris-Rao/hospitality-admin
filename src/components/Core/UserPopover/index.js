@@ -7,6 +7,7 @@ import classes from "./UserPopover.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signOutRequest } from "@/store/auth/authSlice";
 import { cn } from "@/helper/HelperFunction";
+import { userImage } from "@/constant/imagePath";
 
 export default function UserPopover({ user }) {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ export default function UserPopover({ user }) {
       <div className={classes.userPopover}>
         <div className={classes.userPhoto}>
           <img
-            src={user?.photo ? imageUrl(user?.photo) : "/images/profile.png"}
+            src={user?.photo ? imageUrl(user?.photo) : userImage}
             alt="profile"
             width={40}
             height={40}

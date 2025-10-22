@@ -49,6 +49,10 @@
     font-weight: 400;
     color: var(--text-color);
     opacity: 0.5;
+
+    @media screen and (max-width: 525px) {
+      font-size: 14px;
+    }
   }
 
   & > h4 {
@@ -56,6 +60,10 @@
     font-weight: 600;
     color: var(--text-color);
     margin: 0;
+
+    @media screen and (max-width: 525px) {
+      font-size: 18px;
+    }
   }
 }
 
