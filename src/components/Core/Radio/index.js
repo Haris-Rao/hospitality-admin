@@ -7,6 +7,7 @@ export const Radio = ({
   setValue,
   label,
   labelStyles,
+  labelClass,
   disabled,
   variant = "default",
 }) => {
@@ -14,7 +15,7 @@ export const Radio = ({
 
   return (
     <div
-      className={`my-2 ${classes.radioWithLabel} ${
+      className={` ${classes.radioWithLabel} ${
         variant === "secondary" ? classes.radioCard : ""
       } ${variant === "secondary" && isSelected ? classes.selected : ""} ${
         variant === "secondary" && !isSelected ? classes.unselected : ""
@@ -37,6 +38,7 @@ export const Radio = ({
         <Label
           htmlFor={`radio${label}`}
           style={{ ...labelStyles, marginBottom: "0px" }}
+          labelClass={labelClass}
           className={`${
             variant === "secondary" ? classes.radioLabelSecondary : ""
           } ${

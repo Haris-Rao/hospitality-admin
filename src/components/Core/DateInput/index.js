@@ -25,6 +25,7 @@ export default function DateInput({
   variant = "primary",
   customClass,
   inline,
+  labelClass,
   ...props
 }) {
   const [open, setOpen] = React.useState(false);
@@ -41,7 +42,11 @@ export default function DateInput({
       ref={ref}
       id={id}
     >
-      {label && <Label variant={inline && "inline"}>{label}</Label>}
+      {label && (
+        <Label variant={inline && "inline"} labelClass={labelClass}>
+          {label}
+        </Label>
+      )}
       <PopperComponent
         open={open}
         setOpen={setOpen}

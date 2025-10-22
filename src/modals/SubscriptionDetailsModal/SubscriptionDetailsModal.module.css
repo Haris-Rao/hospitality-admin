@@ -17,6 +17,11 @@
   }
 }
 
+.inputLabel {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--text-color-dark-secondary) !important;
+}
 .formGroup {
   display: flex;
   flex-direction: column;

@@ -98,18 +98,21 @@ const SubscriptionDetailsModal = ({
           <Input
             type="text"
             label="Subscription ID"
+            labelClass={classes.inputLabel}
             value={formData?.subscriptionId}
             setter={(value) => handleInputChange("subscriptionId", value)}
           />
           <Input
             type="text"
             label="Subscription Title"
+            labelClass={classes.inputLabel}
             value={formData?.subscriptionTitle}
             setter={(value) => handleInputChange("subscriptionTitle", value)}
           />
           <Input
             type="text"
             label="Subscription Availability"
+            labelClass={classes.inputLabel}
             value={formData?.subscriptionAvailability}
             setter={(value) =>
               handleInputChange("subscriptionAvailability", value)
@@ -119,6 +122,7 @@ const SubscriptionDetailsModal = ({
           <Input
             type="text"
             label="No of Trial Days"
+            labelClass={classes.inputLabel}
             value={formData?.noOfTrialDays}
             setter={(value) => handleInputChange("noOfTrialDays", value)}
           />
@@ -126,14 +130,16 @@ const SubscriptionDetailsModal = ({
           <Input
             type="email"
             label="Email"
+            labelClass={classes.inputLabel}
             value={formData?.email}
             setter={(value) => handleInputChange("email", value)}
           />
           <div className={classes.formGroup}>
-            <label className={classes.formLabel}>Recurring Type</label>
+            <label className={classes.inputLabel}>Recurring Type</label>
             <div className={classes.radioGroup}>
               <Radio
                 label="Monthly"
+                labelClass={classes.inputLabel}
                 value={formData?.recurringType}
                 setValue={(value) => handleInputChange("recurringType", value)}
                 variant="secondary"
@@ -141,12 +147,14 @@ const SubscriptionDetailsModal = ({
               <Radio
                 label="Yearly"
                 value={formData?.recurringType}
+                labelClass={classes.inputLabel}
                 setValue={(value) => handleInputChange("recurringType", value)}
                 variant="secondary"
               />
               <Radio
                 label="Both"
                 value={formData?.recurringType}
+                labelClass={classes.inputLabel}
                 setValue={(value) => handleInputChange("recurringType", value)}
                 variant="secondary"
               />
@@ -156,23 +164,27 @@ const SubscriptionDetailsModal = ({
           <Input
             type="text"
             label="Monthly Cost"
+            labelClass={classes.inputLabel}
             value={formData?.monthlyCost}
             setter={(value) => handleInputChange("monthlyCost", value)}
           />
           <Input
             type="text"
             label="Yearly Cost"
+            labelClass={classes.inputLabel}
             value={formData?.yearlyCost}
             setter={(value) => handleInputChange("yearlyCost", value)}
           />
 
           <DateInput
             label="Start Date"
+            labelClass={classes.inputLabel}
             value={formData?.startDate}
             setValue={(value) => handleInputChange("startDate", value)}
           />
           <DateInput
             label="End Date"
+            labelClass={classes.inputLabel}
             value={formData?.endDate}
             setValue={(value) => handleInputChange("endDate", value)}
           />
