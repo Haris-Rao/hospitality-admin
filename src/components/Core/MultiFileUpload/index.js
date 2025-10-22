@@ -6,14 +6,14 @@ import { Spinner } from "react-bootstrap";
 import Dropzone from "react-dropzone";
 import { AiFillEye, AiFillFileWord } from "react-icons/ai";
 import { BsFileEarmarkPdfFill } from "react-icons/bs";
-import { FaUpload } from "react-icons/fa6";
+import { FiUploadCloud } from "react-icons/fi";
 import { IoCloseOutline } from "react-icons/io5";
+import { TbUpload } from "react-icons/tb";
 import ReactPlayer from "react-player";
 import { toast } from "react-toastify";
 import { Button } from "../Button";
 import { Label } from "../Label";
 import classes from "./MultiFileUpload.module.css";
-import { FiUpload, FiUploadCloud } from "react-icons/fi";
 
 const MultiFileUpload = ({
   label,
@@ -106,11 +106,11 @@ const MultiFileUpload = ({
                 <div className={classes.section}>
                   <div className={classes.fileUploadOptions}>
                     <div className={classes.uploadIcon}>
-                      <FiUploadCloud size={20} color={"var(--icon-color)"} />
+                      <TbUpload size={30} color={"var(--secondary-color)"} />
                     </div>
 
                     <p className={classes.uploadText}>
-                      <span className={classes.boldText}>Click to upload</span>
+                      <span className={classes.boldText}>Upload Image</span>
                       <span> or drag and drop </span>
                     </p>
                     {subText && <p>{subText}</p>}

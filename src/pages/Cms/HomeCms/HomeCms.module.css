@@ -1,0 +1,24 @@
+.section {
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fourGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  @media screen and (max-width: 1120px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+.btnsWrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 18px 22px;
+  border-top: 1px solid var(--input-border-color);
+}

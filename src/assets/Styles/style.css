@@ -92,7 +92,8 @@
   --active-page-color: #79b3ff;
   --active-subItem-border-color: #e9eef5;
 
-  --multi-file-upload-border-color: light-dark(#dcdde8, #1c1c1c);
+  --multi-file-upload-border-color: light-dark(#dcdde8, #404040);
+  --multi-file-upload-icon-bg: light-dark(#f9f9f9, #ffebdf);
 
   --background: light-dark(#f2f6ff, #1c1c1c);
   --background-secondary: light-dark(#161414, #141414);

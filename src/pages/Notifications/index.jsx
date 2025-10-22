@@ -12,6 +12,7 @@ import { Button } from "@/components/Core/Button";
 import PaginationComponent from "@/components/Core/PaginationComponent";
 import NotificationComponent from "@/components/NotificationComponent";
 import SideBarSkeleton from "@/components/Core/SideBarSkeleton";
+import { UserProfile } from "@/constant/imagePath";
 
 function Notifications() {
   const dispatch = useDispatch();
@@ -85,14 +86,18 @@ function Notifications() {
             <Button
               label={"Mark all as read"}
               leftIcon={
-                <IoMdCheckmarkCircleOutline color="var(--main-color)" />
+                <IoMdCheckmarkCircleOutline
+                  color="var(--main-color)"
+                  opacity={0.5}
+                />
               }
               onClick={() => ""}
               variant="bordered-none"
+              className={classes.markAllAsReadButton}
             />
           </div>
           <div className={classes.notificationList}>
-            <NotificationComponent data={data} />
+            <NotificationComponent data={data} onClick={() => {}} />
           </div>
           <div className={classes.Pagination}>
             <PaginationComponent
@@ -113,12 +118,12 @@ export default Notifications;
 const notifications_dummy = Array(11)
   .fill("")
   .map((_, index) => ({
-    image: "/images/roomImg.png",
+    image: UserProfile,
     title: "Liam Hawthorne",
     message:
       "As twilight descends, the skyline glows with a soft light, inviting new stories to unfold in the vibrant city.",
     notificationDate: formatDate(new Date()),
-    createdAt: formatDate(new Date()),
+    createdAt: new Date(),
     seen: index % 2 === 0 ? true : false,
     _id: index + 1,
   }));

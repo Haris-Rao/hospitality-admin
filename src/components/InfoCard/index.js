@@ -10,7 +10,7 @@ function InfoCard({
   variant = "primary",
   bottonGrid = false,
   onView,
-  onDelete,
+  onEdit,
 }) {
   return (
     <div className={classes.container} data-variant={variant}>
@@ -26,7 +26,7 @@ function InfoCard({
             <div className={classes.addEditButton} onClick={onView}>
               <TbEye size={20} />
             </div>
-            <div className={classes.addEditButton} onClick={onDelete}>
+            <div className={classes.addEditButton} onClick={onEdit}>
               <TbPencil size={20} />
             </div>
           </div>

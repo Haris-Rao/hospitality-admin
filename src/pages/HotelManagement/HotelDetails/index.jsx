@@ -1,14 +1,15 @@
 import SideBarSkeleton from "@/components/Core/SideBarSkeleton";
-import classes from "./HotalDetails.module.css";
+import classes from "./HotelDetails.module.css";
 import PageHeader from "@/components/PageHeader";
 import { FaPencil } from "react-icons/fa6";
 import Box from "@/components/Core/Box";
 import { useState } from "react";
 import InfoCard from "@/components/InfoCard";
 import InfoDetailCard from "@/components/InfoDetailCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function HotalDetails() {
+function HotelDetails() {
+  const { id } = useParams();
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   return (
@@ -23,7 +24,7 @@ function HotalDetails() {
           buttonLabel="Edit"
           buttonIcon={<FaPencil />}
           variant="light-danger"
-          onClick={() => navigate("/hotel-management/create")}
+          onClick={() => navigate(`/hotel-management/edit/${id}`)}
         />
         <div className={classes.detailCardSection}>
           <InfoDetailCard data={hotelDetailsData} />
@@ -49,7 +50,7 @@ function HotalDetails() {
   );
 }
 
-export default HotalDetails;
+export default HotelDetails;
 
 const callLogsData = Array(12)
   .fill(0)

@@ -235,12 +235,12 @@
   align-items: center;
 }
 .uploadIcon {
-  border: 1px solid var(--border-color);
   border-radius: 50%;
-  height: 45px;
-  width: 45px;
+  height: 60px;
+  width: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  background: var(--multi-file-upload-icon-bg);
 }

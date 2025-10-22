@@ -58,12 +58,13 @@ function HotelManagement() {
         <div className={classes.cardWrapper}>
           {hotelManagementData.map((item) => (
             <InfoCard
-              key={item._id}
+              key={item?._id}
               data={item}
               variant="primary"
               type="hotel"
               bottonGrid={true}
-              onView={() => navigate(`/hotel-management/${item._id}`)}
+              onView={() => navigate(`/hotel-management/${item?._id}`)}
+              onEdit={() => navigate(`/hotel-management/edit/${item?._id}`)}
             />
           ))}
         </div>

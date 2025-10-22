@@ -6,15 +6,17 @@ const Login = lazy(() => import("../pages/Login"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 const HotelManagement = lazy(() => import("../pages/HotelManagement"));
 const HotelDetails = lazy(() =>
-  import("../pages/HotelManagement/HotalDetails")
+  import("../pages/HotelManagement/HotelDetails")
 );
 const ProfileSettings = lazy(() => import("../pages/ProfileSettings"));
 
-const CreateHotel = lazy(() => import("../pages/HotelManagement/CreateHotel"));
+const AddHotel = lazy(() => import("../pages/HotelManagement/AddEditHotel"));
+const EditHotel = lazy(() => import("../pages/HotelManagement/AddEditHotel"));
 const SubscriptionManagement = lazy(() =>
   import("../pages/SubscriptionManagement")
 );
 const Notifications = lazy(() => import("../pages/Notifications"));
+const Cms = lazy(() => import("../pages/Cms"));
 
 export const routes = [
   {
@@ -57,7 +59,15 @@ export const routes = [
     protected: true,
     showInSidebar: false,
     title: "Create Hotel",
-    element: <CreateHotel />,
+    element: <AddHotel />,
+  },
+  {
+    path: "/hotel-management/edit/:id",
+    exact: true,
+    protected: true,
+    showInSidebar: false,
+    title: "Edit Hotel",
+    element: <EditHotel />,
   },
   {
     path: "/subscription-management",
@@ -84,5 +94,14 @@ export const routes = [
     title: "Notifications",
     icon: <FaBell />,
     element: <Notifications />,
+  },
+  {
+    path: "/cms",
+    exact: true,
+    protected: true,
+    showInSidebar: true,
+    title: "Content Management System",
+    icon: <FaBook />,
+    element: <Cms />,
   },
 ];

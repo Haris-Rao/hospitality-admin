@@ -58,11 +58,9 @@
 }
 
 .textAreaBox textarea::placeholder {
+  font-family: var(--ff-primary-semibold);
+  font-size: var(--fs-100);
   color: var(--placeholder-color);
-  font-family: var(--ff-primary-reg);
-  font-size: var(--fs-base);
-  text-transform: capitalize;
-  opacity: 0.4;
 }
 
 .secondary textarea::placeholder {

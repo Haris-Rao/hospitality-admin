@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  background: var(--tabs-bg);
+  background: var(--background-section);
   overflow: hidden;
   width: fit-content;
   border-radius: 6px;
@@ -18,7 +18,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
-  background: var(--tabs-bg);
+  background: var(--background-section);
   line-height: 1;
   min-width: fit-content;
 
@@ -42,24 +42,24 @@
 }
 
 ._active {
-  background-color: var(--blue-haze) !important;
+  background-color: #fff0e7 !important;
+  border-radius: 5px;
 
   [data-variant="secondary"] & {
     background-color: var(--background-secondary) !important;
   }
 
   & .tabText {
-    color: var(--tab-text-color) !important;
+    color: #fe8f4e !important;
     opacity: 1;
     font-weight: 500;
   }
 }
 
 .tabText {
-  color: var(--icon-color);
+  color: var(--attachment-icon-color);
   font-weight: 400;
   margin: 0;
-  opacity: 0.4;
   text-align: center;
 }
 

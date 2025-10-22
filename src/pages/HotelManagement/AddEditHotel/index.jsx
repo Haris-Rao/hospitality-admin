@@ -1,17 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
-import classes from "./CreateHotel.module.css";
+import AttachmentUpload from "@/components/Core/AttachmentUpload";
+import { Button } from "@/components/Core/Button";
+import { Input } from "@/components/Core/Input";
 import SideBarSkeleton from "@/components/Core/SideBarSkeleton";
 import PageHeader from "@/components/PageHeader";
-import UploadImageBox from "@/components/Core/UploadImageBox";
-import { Input } from "@/components/Core/Input";
-import { Button } from "@/components/Core/Button";
-import AttachmentUpload from "@/components/Core/AttachmentUpload";
+import { useState } from "react";
+import classes from "./AddEditHotel.module.css";
+import MultiFileUpload from "@/components/Core/MultiFileUpload";
+import { useParams } from "react-router-dom";
 
-function CreateHotel() {
+function AddEditHotel() {
+  const { id } = useParams();
+  const isEdit = id;
   const [formData, setFormData] = useState({
-    image: null,
+    image: [],
     Hotel_ID: "",
     hotel_name: "",
     location: "",
@@ -31,23 +34,20 @@ function CreateHotel() {
     <SideBarSkeleton>
       <div className={classes.mainContainer}>
         <PageHeader
-          title="Create Hotel"
+          title={isEdit ? "Edit Hotel" : "Create Hotel"}
           breadcrumbs={[
             { label: "Hotel Management", value: "/hotel-management" },
-            { label: "Create Hotel", value: "/hotel-management/create" },
+            isEdit
+              ? { label: "Edit Hotel", value: `/hotel-management/edit/${id}` }
+              : { label: "Create Hotel", value: "/hotel-management/create" },
           ]}
         />
 
         <div className={classes.formSection}>
-          <AttachmentUpload
-            state={formData.image}
-            setter={(value) => handleInputChange("image", value)}
-            placeholder="Upload Image"
-            subPlaceholder="Maximum file size: 2 MB"
-            acceptedTypes="image"
-            background="var(--secondary-color)"
-            variant="secondary"
-            onDelete={() => handleInputChange("image", null)}
+          <MultiFileUpload
+            label="Upload Pictures"
+            files={formData.image}
+            setFiles={(value) => handleInputChange("image", value)}
           />
           <Input
             label="Hotel ID"
@@ -82,11 +82,11 @@ function CreateHotel() {
         </div>
         <div className={classes.buttonSection}>
           <Button variant="dark" label="Cancel" />
-          <Button variant="primary" label="Create Hotel" />
+          <Button variant="primary" label={isEdit ? "Update" : "Create"} />
         </div>
       </div>
     </SideBarSkeleton>
   );
 }
 
-export default CreateHotel;
+export default AddEditHotel;
