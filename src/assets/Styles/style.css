@@ -128,9 +128,10 @@
   --fs-200: 16px;
   --fs-150: 15px;
   --fs-100: 14px;
+  --fs-90: 13px;
   --fs-base: var(--fs-100);
   --fs-btn: var(--fs-200);
-  --fs-input: var(--fs-150);
+  --fs-input: var(--fs-90);
   /* font family */
   --ff-primary: "inter-regular";
   --ff-primary-reg: "inter-regular";
