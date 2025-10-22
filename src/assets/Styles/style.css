@@ -75,7 +75,7 @@
   --card-border-color: light-dark(#e9eef5, #44444a);
   --secondary-border-color: #79b3ff;
   /* --input-border-color: var(--border-color); */
-  --input-border-color: light-dark(#e0e0e0, #44444a);
+  --input-border-color: light-dark(#e5e7eb, #404040);
   --search-border-color: var(--input-border-color);
   --disabled-input-color: #f1f2f3;
   --tabs-border-color: light-dark(#e3e3e3, #44444a);
@@ -95,7 +95,7 @@
   --background-quaternary: light-dark(#ffffff, #2b2b2b);
   --background-quinary: light-dark(#ffffff, #1c1c1c);
   --background-section: light-dark(#ffffff, #2b2b2b);
-  --input-background-color: light-dark(#f1f2f3, #1c1c1c);
+  --input-background-color: light-dark(#ffffff, #212121);
   --login-input-background-color: light-dark(#f9f9f9, #1c1c1c);
   --secondary-background: #ecf0f5;
   --icon-background: #f1f2f3;

@@ -172,7 +172,7 @@ export const DropDown = ({
       return {
         ...styles,
         backgroundColor: isSelected && "var(--primary-color)",
-        color: isSelected && "var(--white-color)",
+        color: isSelected ? "var(--white-color)" : singleValueColor,
         padding: "8px 12px",
         fontFamily: "var(--ff-primary-reg)",
         textTransform: "capitalize",

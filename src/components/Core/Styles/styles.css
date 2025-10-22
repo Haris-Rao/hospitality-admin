@@ -9,6 +9,6 @@
   --input-padding-sm: var(--_padding-y-sm) var(--_padding-x-sm);
   --input-border-radius: 7px;
   --input-border-radius-rounded: 50px;
-  --input-background-color: light-dark(#ffffff, #1e1e20);
+  --input-background-color: light-dark(#ffffff, #212121);
   --input-border: 1px solid var(--input-border-color);
 }
