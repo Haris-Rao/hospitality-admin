@@ -12,6 +12,8 @@ import { Button } from "@/components/Core/Button";
 import PaginationComponent from "@/components/Core/PaginationComponent";
 import NotificationComponent from "@/components/NotificationComponent";
 import SideBarSkeleton from "@/components/Core/SideBarSkeleton";
+import { airport } from "@/constant/imagePath";
+import PageHeader from "@/components/PageHeader";
 
 function Notifications() {
   const dispatch = useDispatch();
@@ -76,9 +78,7 @@ function Notifications() {
   return (
     <SideBarSkeleton>
       <div className={classes.container}>
-        <div className={classes.header}>
-          <h3 className={classes.title}>Notifications</h3>
-        </div>
+        <PageHeader title="Notifications" />
         <div className={classes.main}>
           <div className={classes.mainHeader}>
             <h2>Notifications</h2>
@@ -87,7 +87,7 @@ function Notifications() {
               leftIcon={
                 <IoMdCheckmarkCircleOutline color="var(--main-color)" />
               }
-              onClick={() => ""}
+              className={classes.markAllAsReadButton}
               variant="bordered-none"
             />
           </div>
@@ -113,7 +113,7 @@ export default Notifications;
 const notifications_dummy = Array(11)
   .fill("")
   .map((_, index) => ({
-    image: "/images/roomImg.png",
+    image: airport,
     title: "Liam Hawthorne",
     message:
       "As twilight descends, the skyline glows with a soft light, inviting new stories to unfold in the vibrant city.",

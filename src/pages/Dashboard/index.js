@@ -10,9 +10,11 @@ import { useState } from "react";
 import classes from "./Dashboard.module.css";
 import RangeChart from "@/components/Charts/RangeChart";
 import DonutChart from "@/components/Charts/DonutChart";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const [data, setData] = useState(dashboardData);
+  const navigate = useNavigate();
   return (
     <SideBarSkeleton>
       <div className={classes.dashboardContainer}>
@@ -38,11 +40,10 @@ export default function Dashboard() {
             <DonutChart
               data={data?.donutChartData}
               colors={[
-                "var(--light-blue)",
                 "var(--primary-color)",
                 "var(--secondary-color)",
+                "#F9F9F9",
               ]}
-              centerLabel="Total"
               showCenterLabel={false}
               height={300}
             />
@@ -69,7 +70,11 @@ export default function Dashboard() {
           <div className={classes.callLogs}>
             <Box className={classes.calllogsBox}>
               <div className={classes.calllogsSection}>
-                <PageHeader title="Call Logs" buttonLabel="View All" />
+                <PageHeader
+                  title="Call Logs"
+                  buttonLabel="View All"
+                  onClick={() => navigate("/hotel-management")}
+                />
                 <div className={classes.cardWrapper}>
                   {data?.callLogsData?.map((callLog) => (
                     <InfoCard

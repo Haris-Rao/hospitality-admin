@@ -1,31 +1,20 @@
-"use client";
-
 import SideBarSkeleton from "@/components/Core/SideBarSkeleton";
+import FilterOption from "@/components/FilterOption";
 import InfoCard from "@/components/InfoCard";
 import PageHeader from "@/components/PageHeader";
-import classes from "./HotelManagement.module.css";
+import { hotelManagementData } from "@/constant/DummyData";
+import { statusOptions } from "@/data/data";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
-import FilterOption from "@/components/FilterOption";
 import { useNavigate } from "react-router-dom";
+import classes from "./HotelManagement.module.css";
 
 function HotelManagement() {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState(null);
   const navigate = useNavigate();
-  const statusOptions = [
-    { label: "All", value: "all" },
-    { label: "Active", value: "active" },
-    { label: "Inactive", value: "inactive" },
-  ];
 
-  // Filter data based on status
-  const filteredData = hotelManagementData.filter((item) => {
-    if (!statusFilter || statusFilter === "all") {
-      return true;
-    }
-    return item.status === statusFilter;
-  });
+  const [data, setData] = useState(hotelManagementData);
 
   const handleStatusFilter = (option) => {
     setStatusFilter(option.value);
@@ -56,7 +45,7 @@ function HotelManagement() {
         />
 
         <div className={classes.cardWrapper}>
-          {hotelManagementData.map((item) => (
+          {data?.map((item) => (
             <InfoCard
               key={item._id}
               data={item}
@@ -73,14 +62,3 @@ function HotelManagement() {
 }
 
 export default HotelManagement;
-
-const hotelManagementData = Array(10)
-  .fill(0)
-  .map((_, index) => ({
-    _id: index + 1,
-    image: "/assets/images/airport.png",
-    name: "Liam Carter",
-    date: new Date(),
-    dailedRoom: "Kitchen",
-    roomNumber: 302,
-  }));

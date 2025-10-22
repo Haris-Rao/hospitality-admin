@@ -42,6 +42,10 @@
   font-weight: 600;
   color: var(--text-color-dark-secondary);
   margin: 0;
+
+  @media screen and (max-width: 525px) {
+    font-size: 14px;
+  }
 }
 
 .gaugeContainer {

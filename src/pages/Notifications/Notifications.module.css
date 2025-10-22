@@ -1,16 +1,22 @@
-.main {
-    background-color: var(--background-quaternary);
-    box-shadow: var(--section-box-shadow);
-    border-radius: 10px;
-    /* padding-block: 16px; */
-    /* gap: 16px; */
-    display: flex;
-    flex-direction: column;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    @media screen and (max-width: 450px) {
-        padding: 10px;
-        gap: 10px;
-    }
+.main {
+  background-color: var(--background-quaternary);
+  box-shadow: var(--section-box-shadow);
+  border-radius: 10px;
+  /* padding-block: 16px; */
+  /* gap: 16px; */
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 450px) {
+    padding: 10px;
+    gap: 10px;
+  }
 }
 
 /* .headerHeading {
@@ -18,38 +24,43 @@
 } */
 
 .mainHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid var(--copyright-top-border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--copyright-top-border-color);
 
-    & h2 {
-        color: var(--primary-text-color);
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 0px;
-    }
+  & h2 {
+    color: var(--primary-text-color);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0px;
+  }
 
-    @media screen and (max-width: 520px) {
-        flex-direction: column;
-        gap: 20px;
-    }
+  & > button {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
 
-    @media screen and (max-width: 450px) {
-        gap: 12px;
-    }
+  @media screen and (max-width: 520px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 450px) {
+    gap: 12px;
+  }
 }
 
 .notificationList {
-    height: calc(100vh - 270px);
-    overflow: auto;
+  height: calc(100vh - 270px);
+  overflow: auto;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .Pagination {
-    border-top: 1px solid var(--copyright-top-border-color);
+  border-top: 1px solid var(--copyright-top-border-color);
 }

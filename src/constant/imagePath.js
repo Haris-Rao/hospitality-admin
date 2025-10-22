@@ -11,3 +11,4 @@ export { default as airport_image_full } from "../assets/images/airport_image.pn
 export { default as section_image } from "../assets/images/sectionImg.png";
 export { default as Logo_Dark } from "../assets/images/Logo_dark.png";
 export { default as Logo_Light } from "../assets/images/Logo_light.png";
+export { default as airport } from "../assets/images/airport.png";

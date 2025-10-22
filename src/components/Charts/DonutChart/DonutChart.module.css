@@ -9,27 +9,57 @@
 .legendContainer {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 40px;
   margin-bottom: 12px;
   flex-wrap: wrap;
 
   @media screen and (max-width: 768px) {
-    gap: 16px;
+    gap: 24px;
   }
 
   @media screen and (max-width: 400px) {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: center;
+    gap: 16px;
   }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  & h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color-dark-secondary);
+    margin: 0;
+  }
+}
+
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  background: var(--btn-bg-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.icon {
+  color: var(--primary-color);
+  font-size: 18px;
 }
 
 .legendItem {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-size: 14px;
-  color: var(--primary-heading-color);
+  color: var(--text-color-dark-secondary);
   font-weight: 500;
 }
 
@@ -40,15 +70,23 @@
   flex-shrink: 0;
 }
 
+.legendContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .legendLabel {
-  color: var(--primary-heading-color);
-  font-weight: 500;
+  color: var(--text-color-dark-secondary);
+  opacity: 0.6;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .legendValue {
-  color: var(--primary-heading-color);
+  color: var(--text-color-dark-secondary);
   font-weight: 600;
-  margin-left: 4px;
+  font-size: 20px;
 }
 
 /* Legacy styles for backward compatibility */
@@ -81,19 +119,16 @@
 
 .title {
   margin-bottom: 0px;
-  font-family: var(--ff-primary-reg);
   font-size: 14px;
 }
 
 .transactionTitle {
   margin-bottom: 0px;
-  font-family: var(--ff-primary-reg);
   font-size: 14px;
 }
 
 .SuccessfulTitle {
   margin-bottom: 0px;
-  font-family: var(--ff-primary-reg);
   font-size: 14px;
 }
 
@@ -126,13 +161,11 @@
 
 .value {
   margin-bottom: 0px;
-  font-family: var(--ff-primary-semiBold);
   font-size: 16px;
 }
 
 .transactionValue {
   margin-bottom: 0px;
-  font-family: var(--ff-primary-semiBold);
   font-size: 16px;
 }
 
@@ -152,7 +185,6 @@
 
 .customTooltip p {
   margin-bottom: 0px;
-  font-family: var(--ff-secondary-bold);
   color: var(--white-color);
   font-size: 14px;
   font-weight: 400;
@@ -164,5 +196,4 @@
 
 .value {
   font-size: 46px;
-  font-family: var(--ff-secondary-bold);
 }

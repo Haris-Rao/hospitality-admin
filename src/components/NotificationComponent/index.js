@@ -31,7 +31,7 @@ function NotificationComponent({ data, onClick, isLoading }) {
                     notification?.seen && classes.seen
                   )}
                   key={key}
-                  onClick={() => !isLoading && onClick(notification)}
+                  onClick={() => {}}
                   style={{
                     cursor:
                       !["none"]?.includes(notification?.flag) && "pointer",
