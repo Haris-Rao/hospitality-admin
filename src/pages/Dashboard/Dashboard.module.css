@@ -1,82 +1,53 @@
-.container {
+.dashboardContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 20px;
+}
+
+.leftCol {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 25px;
 }
-.stats_container {
+
+.chartBox {
+  padding: 20px !important;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pageHeadClass h2 {
+  font-size: 20px !important;
+}
+.revenueChart,
+.calllogsBox {
+  padding: 20px !important;
+}
+
+.calllogsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.cardWrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  @media screen and (max-width: 1400px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media screen and (max-width: 1100px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media screen and (max-width: 567px) {
-    grid-template-columns: 1fr;
-  }
-}
-.graph_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  height: 100%;
+  gap: 24px;
 
   @media screen and (max-width: 1200px) {
-    grid-template-columns: 1fr;
-  }
-}
-.graph_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  & h4 {
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--tertiary-text-color);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @media screen and (max-width: 450px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+  @media screen and (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-.filter_button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: var(--secondary-border-radius);
-  border: 1px solid var(--light-gray-color);
-  padding: 8.5px 12px;
-  cursor: pointer;
-}
 
-.graph_box {
-  border-radius: 4px;
-  border: 1px solid var(--Stroke-Color, #eee);
-  background: #fff;
-  box-shadow: none !important;
-}
-
-.dashboard_skeleton {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.dashboard_skeleton_stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
-}
-.dashboard_skeleton_graphs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  @media screen and (max-width: 991px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

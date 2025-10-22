@@ -3,6 +3,8 @@ import { GoPencil } from "react-icons/go";
 import { GrStatusCritical } from "react-icons/gr";
 import { HiOutlineTrash } from "react-icons/hi2";
 import { parking_card_img1, profileImg, user_image } from "./imagePath";
+import { BarsCardIcon, LineCardIcon } from "@/components/Icons/apple_icon";
+import { IoCallOutline } from "react-icons/io5";
 
 export const dashboardBooking_filter = [
   {
@@ -432,3 +434,50 @@ export const subscriptionData = [
     yearlyCost: "100",
   },
 ];
+
+export const dashboardData = {
+  callCard: [
+    {
+      rightIcon: <LineCardIcon />,
+      title: "Total Active Hotels",
+      count: 450,
+    },
+    {
+      title: "Total Daily Calls",
+      count: 450,
+      icon: <IoCallOutline />,
+      rightIcon: <BarsCardIcon />,
+    },
+  ],
+  areaChartData: [
+    { month: "Jan", value: 2500 },
+    { month: "Feb", value: 2400 },
+    { month: "Mar", value: 3000 },
+    { month: "Apr", value: 5000 },
+    { month: "May", value: 8000 },
+    { month: "Jun", value: 24958 },
+    { month: "Jul", value: 15000 },
+    { month: "Aug", value: 12000 },
+    { month: "Sep", value: 18000 },
+    { month: "Oct", value: 22000 },
+    { month: "Nov", value: 25000 },
+    { month: "Dec", value: 30000 },
+  ],
+
+  callLogsData: Array(12)
+    .fill(0)
+    .map((_, index) => ({
+      _id: index + 1,
+      name: "Benjamin David",
+      date: new Date(),
+      duration: "10 minutes",
+      callType: "Inbound",
+      callStatus: "active",
+    })),
+
+  donutChartData: [
+    { name: "Package 1", value: 12 },
+    { name: "Package 2", value: 18 },
+    { name: "Package 3", value: 40 },
+  ],
+};

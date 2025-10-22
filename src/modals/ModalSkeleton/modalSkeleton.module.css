@@ -113,7 +113,7 @@
 
 .footer {
   padding: 18px 22px;
-  background-color: var(--background-section);
+  background-color: var(--chat-header-bg);
   border-color: var(--copyright-top-border-color);
 }
 

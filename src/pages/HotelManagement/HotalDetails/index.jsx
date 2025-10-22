@@ -38,7 +38,7 @@ function HotalDetails() {
               setSearch={setSearch}
             />
             <div className={classes.cardWrapper}>
-              {callLogsData.map((callLog) => (
+              {callLogsData?.map((callLog) => (
                 <InfoCard key={callLog._id} data={callLog} type="callLogs" />
               ))}
             </div>

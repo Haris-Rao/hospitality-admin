@@ -11,29 +11,6 @@ export default function SubscriptionManagement() {
   const [data, setData] = useState(subscriptionData);
   const [showModal, setShowModal] = useState(false);
   const [selectedSubscription, setSelectedSubscription] = useState(null);
-  const [isEditMode, setIsEditMode] = useState(false);
-
-  const handleEditSubscription = (subscription) => {
-    setSelectedSubscription(subscription);
-    setIsEditMode(true);
-    setShowModal(true);
-  };
-
-  const handleDeleteSubscription = (subscription) => {
-    console.log("Delete subscription:", subscription);
-    setShowModal(false);
-  };
-
-  const handleEditSubmit = (updatedData) => {
-    console.log("Edit subscription:", updatedData);
-    setShowModal(false);
-  };
-
-  const handleCreateSubscription = () => {
-    setSelectedSubscription(null);
-    setIsEditMode(false);
-    setShowModal(true);
-  };
 
   return (
     <SideBarSkeleton>
@@ -42,7 +19,10 @@ export default function SubscriptionManagement() {
           title="Subscription Management"
           buttonLabel="Create "
           buttonIcon={<FaPlus />}
-          onClick={handleCreateSubscription}
+          onClick={() => {
+            setSelectedSubscription(null);
+            setShowModal(true);
+          }}
         />
 
         <div className={classes.subscriptionGrid}>
@@ -50,20 +30,23 @@ export default function SubscriptionManagement() {
             <SubscriptionCard
               key={index}
               data={subscription}
-              onEdit={() => handleEditSubscription(subscription)}
+              onEdit={() => {
+                setSelectedSubscription(subscription);
+                setShowModal(true);
+              }}
             />
           ))}
         </div>
 
-        <SubscriptionDetailsModal
-          show={showModal}
-          setShow={setShowModal}
-          data={selectedSubscription}
-          onCreate={handleCreateSubscription}
-          onEdit={handleEditSubmit}
-          onDelete={handleDeleteSubscription}
-          isEditMode={isEditMode}
-        />
+        {showModal && (
+          <SubscriptionDetailsModal
+            show={showModal}
+            setShow={setShowModal}
+            data={selectedSubscription}
+            onClick={() => {}}
+            onDelete={() => {}}
+          />
+        )}
       </div>
     </SideBarSkeleton>
   );

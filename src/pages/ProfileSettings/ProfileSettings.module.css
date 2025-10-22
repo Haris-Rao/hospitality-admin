@@ -46,6 +46,16 @@
     border: none !important;
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    & > button {
+      padding: 0px !important;
+    }
+  }
 }
 
 .passwordForm,
@@ -69,5 +79,11 @@
   gap: 20px;
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }

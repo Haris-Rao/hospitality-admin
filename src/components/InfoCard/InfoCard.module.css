@@ -5,13 +5,12 @@
   padding: 14px;
   background-color: var(--background-section);
   border: 1px solid var(--copyright-top-border-color);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .container[data-variant="secondary"] {
   background-color: var(--dashboard-background);
   border: 1px solid var(--copyright-top-border-color);
-  border-radius: 6px;
 }
 
 .topSection {

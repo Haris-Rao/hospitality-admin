@@ -161,7 +161,7 @@ export default function ModalSkeleton({
           border: ${hideModalBg ? "none" : ""};
           }
         .modal-body{
-          max-height: 80vh !important;
+          max-height: 80vh;
 
         }
         .modal .modal-dialog {

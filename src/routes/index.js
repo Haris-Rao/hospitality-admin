@@ -1,9 +1,8 @@
 import { lazy } from "react";
-import { FaBook, FaHotel } from "react-icons/fa6";
+import { FaBell, FaBook, FaHotel } from "react-icons/fa6";
 import { RxDashboard } from "react-icons/rx";
 
 const Login = lazy(() => import("../pages/Login"));
-// const Notifications = lazy(() => import("../pages/Notifications"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 const HotelManagement = lazy(() => import("../pages/HotelManagement"));
 const HotelDetails = lazy(() =>
@@ -15,6 +14,7 @@ const CreateHotel = lazy(() => import("../pages/HotelManagement/CreateHotel"));
 const SubscriptionManagement = lazy(() =>
   import("../pages/SubscriptionManagement")
 );
+const Notifications = lazy(() => import("../pages/Notifications"));
 
 export const routes = [
   {
@@ -75,5 +75,14 @@ export const routes = [
     showInSidebar: false,
     title: "Profile Settings",
     element: <ProfileSettings />,
+  },
+  {
+    path: "/notifications",
+    exact: true,
+    protected: true,
+    showInSidebar: true,
+    title: "Notifications",
+    icon: <FaBell />,
+    element: <Notifications />,
   },
 ];

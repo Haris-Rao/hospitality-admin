@@ -1,11 +1,9 @@
-import { imageUrl } from "@/config/apiUrl";
+import parse from "html-react-parser";
+import { FaCircle } from "react-icons/fa";
 import { cn, formatMessageDate } from "../../helper/HelperFunction";
 import NoData from "../Core/NoData/NoData";
 import Skeleton from "../Skeleton";
 import classes from "./NotificationComponent.module.css";
-import { FaCircle } from "react-icons/fa";
-import Image from "next/image";
-import parse from "html-react-parser";
 
 function NotificationComponent({ data, onClick, isLoading }) {
   return (
@@ -41,11 +39,7 @@ function NotificationComponent({ data, onClick, isLoading }) {
                 >
                   <div className={classes.noticationLeftBox}>
                     <div className={classes.imgBox}>
-                      <Image
-                        src={notification?.image}
-                        alt="img"
-                        layout="fill"
-                      />
+                      <img src={notification?.image} alt="img" />
                       {/* <Image
                         src={imageUrl(notification?.sender?.photo)}
                         alt="img"

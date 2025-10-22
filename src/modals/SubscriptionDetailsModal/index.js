@@ -3,7 +3,7 @@ import DateInput from "@/components/Core/DateInput";
 import { Input } from "@/components/Core/Input";
 import { Radio } from "@/components/Core/Radio";
 import ModalSkeleton from "@/modals/ModalSkeleton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import classes from "./SubscriptionDetailsModal.module.css";
 
@@ -11,23 +11,40 @@ const SubscriptionDetailsModal = ({
   show,
   setShow,
   data,
-  onEdit,
   onDelete,
-  onCreate,
-  isEditMode = false,
+  onClick,
 }) => {
   const [formData, setFormData] = useState({
-    subscriptionId: data?.subscriptionId || "",
-    subscriptionTitle: data?.title || "",
-    subscriptionAvailability: data?.subscriptionAvailability || "",
-    email: data?.email || "",
-    monthlyCost: data?.monthlyCost || "",
-    yearlyCost: data?.yearlyCost || "",
-    noOfTrialDays: data?.noOfTrialDays || "",
-    recurringType: data?.recurringType || "",
-    startDate: data?.startDate || "",
-    endDate: data?.endDate || "",
+    subscriptionId: "",
+    subscriptionTitle: "",
+    subscriptionAvailability: "",
+    email: "",
+    monthlyCost: "",
+    yearlyCost: "",
+    noOfTrialDays: "",
+    recurringType: "",
+    startDate: "",
+    endDate: "",
   });
+
+  useEffect(() => {
+    if (data) {
+      setFormData({
+        subscriptionId: data?.subscriptionId || "",
+        subscriptionTitle: data?.title || "",
+        subscriptionAvailability: data?.subscriptionAvailability || "",
+        email: data?.email || "",
+        noOfTrialDays: data?.noOfTrialDays || "",
+        recurringType: data?.recurringType || "",
+        startDate: data?.startDate || "",
+        endDate: data?.endDate || "",
+        monthlyCost: data?.monthlyCost || "",
+        yearlyCost: data?.yearlyCost || "",
+      });
+    }
+  }, [data]);
+
+  console.log("nesss02", formData);
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({
@@ -36,30 +53,12 @@ const SubscriptionDetailsModal = ({
     }));
   };
 
-  const handleEdit = () => {
-    if (onEdit) {
-      onEdit(formData);
-    }
-  };
-
-  const handleCreate = () => {
-    if (onCreate) {
-      onCreate(formData);
-    }
-  };
-
-  const handleDelete = () => {
-    if (onDelete) {
-      onDelete(data);
-    }
-  };
-
   const footer = [
     <div className={classes.footerActions}>
       {data && (
         <Button
           key="delete"
-          onClick={handleDelete}
+          onClick={onDelete}
           variant="light-danger"
           leftIcon={<FaTrash />}
           label="Delete"
@@ -75,8 +74,7 @@ const SubscriptionDetailsModal = ({
           size="md"
         />
         <Button
-          key="edit"
-          onClick={data ? handleEdit : handleCreate}
+          onClick={onClick}
           label={data ? "Edit" : "Create"}
           variant="primary"
           size="md"
@@ -93,6 +91,7 @@ const SubscriptionDetailsModal = ({
       footer={footer}
       width="800px"
       showCloseIcon={true}
+      modalClass={classes.modal}
     >
       <div className={classes.formContainer}>
         <div className={classes.formColumn}>

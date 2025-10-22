@@ -24,17 +24,17 @@ const DashboardNav = ({ noLinks }) => {
 
   const links = {
     loggedOut: [
-      { label: "Dashboard", value: "/dashboard" },
+      { label: "Dashboard", value: "/" },
       { label: "Hotel Management", value: "/hotel-management" },
       { label: "Subscription Management", value: "/subscription-management" },
-      { label: "Chat Management", value: "/chat-management" },
+      { label: "CMS", value: "/cms-management" },
       { label: "Profile Settings", value: "/profile-setting" },
     ],
     loggedIn: [
-      { label: "Dashboard", value: "/dashboard" },
+      { label: "Dashboard", value: "/" },
       { label: "Hotel Management", value: "/hotel-management" },
       { label: "Subscription Management", value: "/subscription-management" },
-      { label: "Chat Management", value: "/chat-management" },
+      { label: "CMS", value: "/cms-management" },
       { label: "Profile Settings", value: "/profile-setting" },
     ],
     customer: [],

@@ -1,0 +1,161 @@
+.activeUsersContainer {
+  background: var(--white-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.legendValue {
+  font-size: 14px;
+  color: var(--legend-value-color);
+  font-weight: 400;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  background: var(--btn-bg-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.icon {
+  color: var(--primary-color);
+  font-size: 18px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color-dark-secondary);
+  margin: 0;
+}
+
+.gaugeContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 24px;
+  min-height: 140px;
+}
+
+.gauge {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  @media screen and (max-width: 500px) {
+    height: 140px;
+  }
+}
+
+.gaugeValue {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.totalNumber {
+  display: block;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text-color-dark-secondary);
+  line-height: 1;
+}
+
+.totalLabel {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color-dark-secondary);
+  margin-top: 4px;
+}
+
+.gaugeSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom gauge segments with proper spacing and border radius */
+.gaugeSvg path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  border-top: 1px solid var(--input-border-color);
+  padding-top: 20px;
+}
+
+.legendItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid var(--input-border-color);
+  gap: 8px;
+  /* padding-right: 25px; */
+  padding-right: 50px;
+  @media screen and (max-width: 500px) {
+    padding-right: 10px;
+  }
+  &:nth-child(2) {
+    border-right: none;
+    padding-right: 0;
+  }
+  &:nth-child(3) {
+    border-left: 1px solid var(--input-border-color);
+    /* padding-left: 25px; */
+    padding-left: 50px;
+    border-right: none;
+    padding-right: 0;
+    @media screen and (max-width: 500px) {
+      padding-left: 10px;
+    }
+  }
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.package1 {
+  background: var(--light-blue);
+}
+
+.package2 {
+  background: var(--primary-color);
+}
+
+.package3 {
+  background: var(--secondary-color);
+}
+
+.legendText {
+  font-size: 14px;
+  color: var(--text-color-dark-secondary);
+  font-weight: 400;
+  text-align: center;
+}

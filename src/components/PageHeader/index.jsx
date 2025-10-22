@@ -7,6 +7,7 @@ import PopperComponent from "../Core/PopperComponent";
 import SearchInput from "../Core/SearchInput";
 import classes from "./PageHeader.module.css";
 import BreadCrumbComponent from "../BreadCrumbComponent";
+import { cn } from "@/helper/HelperFunction";
 export default function PageHeader({
   title,
   breadcrumbs = [],
@@ -15,6 +16,7 @@ export default function PageHeader({
   search = "",
   setSearch = () => {},
   showSearch = false,
+  className = "",
   variant = "primary",
   leftIcon = null,
   onClick = () => {},
@@ -24,7 +26,7 @@ export default function PageHeader({
   const isMobile = useMediaQuery("(max-width: 767px)");
 
   return (
-    <div className={classes.pageHeader}>
+    <div className={cn(classes.pageHeader, className)}>
       <div className={classes.pageHeaderLeft}>
         <h2>{title}</h2>
         {breadcrumbs.length > 0 && <BreadCrumbComponent data={breadcrumbs} />}

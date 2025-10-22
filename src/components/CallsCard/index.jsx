@@ -1,8 +1,7 @@
-import { handleMilitaryToStandardTime } from "@/helper/HelperFunction";
 import { IoHomeOutline } from "react-icons/io5";
-import classes from "./MissedCallsCard.module.css";
+import classes from "./CallsCard.module.css";
 
-const MissedCallsCard = ({ data, icon, rightIcon }) => {
+const CallsCard = ({ data, icon, rightIcon }) => {
   return (
     <div className={classes.mainWrapper}>
       <div className={classes.missedCallsCard}>
@@ -11,14 +10,8 @@ const MissedCallsCard = ({ data, icon, rightIcon }) => {
         </div>
         <div className={classes.cardContent}>
           <div className={classes.cardText}>
-            <span>{data?.title || "Missed Calls"}</span>
-            {data?.duration ? (
-              <h4>
-                {data?.duration} <span>sec</span>
-              </h4>
-            ) : (
-              <h4>{data?.count}</h4>
-            )}
+            <span>{data?.title || "Title"}</span>
+            <h4>{data?.count}</h4>
           </div>
         </div>
       </div>
@@ -27,4 +20,4 @@ const MissedCallsCard = ({ data, icon, rightIcon }) => {
   );
 };
 
-export default MissedCallsCard;
+export default CallsCard;
