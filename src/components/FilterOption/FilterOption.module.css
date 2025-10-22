@@ -1,0 +1,67 @@
+.filterOptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 150px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--background-quinary);
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filterOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.filterOption:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.filterOption.selected {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.filterOption.selected:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.optionLabel {
+  font-weight: 500;
+  flex: 1;
+}
+
+.checkmark {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--white-color);
+  margin-left: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .filterOptionContainer {
+    min-width: 180px;
+  }
+
+  .filterOption {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}

@@ -2,19 +2,17 @@
 
 import React from "react";
 import classes from "./BreadCrumbComponent.module.css";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 export default function BreadCrumbComponent({ data = breadCrumbDummy }) {
-  const router = useRouter();
+  const navigate = useNavigate();
   return (
     <div className={classes.breadcrumb}>
       {data.map((item, index) => (
         <div key={index}>
           <p
             className={index === data.length - 1 && classes.active}
-            onClick={() =>
-              index !== data.length - 1 && router.push(item?.value)
-            }
+            onClick={() => index !== data.length - 1 && navigate(item?.value)}
           >
             {item.label}
           </p>
@@ -27,11 +25,11 @@ export default function BreadCrumbComponent({ data = breadCrumbDummy }) {
 
 const breadCrumbDummy = [
   {
-    label: "Employee Management",
-    value: "/employees",
+    label: "Hotel Management",
+    value: "/hotel-management",
   },
   {
-    label: "Group Details",
-    value: "/employees/1",
+    label: "Hotel Details",
+    value: "/hotel-management/1",
   },
 ];
