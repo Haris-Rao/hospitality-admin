@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { FaHotel } from "react-icons/fa6";
+import { FaBook, FaHotel } from "react-icons/fa6";
 import { RxDashboard } from "react-icons/rx";
 
 const Login = lazy(() => import("../pages/Login"));
@@ -12,6 +12,9 @@ const HotelDetails = lazy(() =>
 const ProfileSettings = lazy(() => import("../pages/ProfileSettings"));
 
 const CreateHotel = lazy(() => import("../pages/HotelManagement/CreateHotel"));
+const SubscriptionManagement = lazy(() =>
+  import("../pages/SubscriptionManagement")
+);
 
 export const routes = [
   {
@@ -55,6 +58,15 @@ export const routes = [
     showInSidebar: false,
     title: "Create Hotel",
     element: <CreateHotel />,
+  },
+  {
+    path: "/subscription-management",
+    exact: true,
+    protected: true,
+    showInSidebar: true,
+    title: "Subscription Management",
+    icon: <FaBook />,
+    element: <SubscriptionManagement />,
   },
   {
     path: "/profile-setting",

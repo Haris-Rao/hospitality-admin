@@ -26,14 +26,14 @@ const DashboardNav = ({ noLinks }) => {
     loggedOut: [
       { label: "Dashboard", value: "/dashboard" },
       { label: "Hotel Management", value: "/hotel-management" },
-      { label: "Call Logs", value: "/call-logs" },
+      { label: "Subscription Management", value: "/subscription-management" },
       { label: "Chat Management", value: "/chat-management" },
       { label: "Profile Settings", value: "/profile-setting" },
     ],
     loggedIn: [
       { label: "Dashboard", value: "/dashboard" },
       { label: "Hotel Management", value: "/hotel-management" },
-      { label: "Call Logs", value: "/call-logs" },
+      { label: "Subscription Management", value: "/subscription-management" },
       { label: "Chat Management", value: "/chat-management" },
       { label: "Profile Settings", value: "/profile-setting" },
     ],

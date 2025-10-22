@@ -15,6 +15,7 @@
   --text-color: light-dark(#1c1c1c, #ffffff);
   --secondary-text-color: light-dark(#1c1c1c, #999999);
   --text-color-dark: light-dark(#ffffff, #1e1e1e);
+  --text-color-light: light-dark(#181d27, #ffffff);
   --text-color-dark-secondary: light-dark(#1e1e1e, #ffffff);
   --dashboard-background: light-dark(#f9f9f9, #1e1e1e);
   --hero-bg: light-dark(var(--primary-color), #1c1e21);

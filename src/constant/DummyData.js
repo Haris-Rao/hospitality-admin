@@ -381,3 +381,54 @@ export const testimonials_headers = [
   { label: "Date", value: "createdAt" },
   { label: "Actions", value: "action" },
 ];
+
+export const subscriptionData = [
+  {
+    title: "Basic",
+    description:
+      "The Premium package provides exclusive, advanced features for businesses that need the best. Unlock all functionalities with priority support and a top-tier experience.",
+    subscriptionId: "001",
+    subscriptionAvailability: "All Users",
+    email: "basic@example.com",
+    noOfTrialDays: "7 Days",
+    startDate: "2025-01-01",
+    endDate: "2025-12-31",
+    monthlyCost: "10",
+    status: "active",
+    usersSubscribed: "120",
+    recurringType: "Monthly",
+    yearlyCost: "100",
+  },
+  {
+    title: "Standard",
+    description:
+      "The Premium package provides exclusive, advanced features for businesses that need the best. Unlock all functionalities with priority support and a top-tier experience.",
+    subscriptionId: "001",
+    subscriptionAvailability: "All Users",
+    email: "standard@example.com",
+    noOfTrialDays: "7 Days",
+    startDate: "2025-01-01",
+    endDate: "2025-12-31",
+    monthlyCost: "10",
+    usersSubscribed: "120",
+    status: "inactive",
+    recurringType: "Monthly",
+    yearlyCost: "100",
+  },
+  {
+    title: "Premium ",
+    description:
+      "The Premium package provides exclusive, advanced features for businesses that need the best. Unlock all functionalities with priority support and a top-tier experience.",
+    subscriptionId: "001",
+    subscriptionAvailability: "All Users",
+    email: "premium@example.com",
+    noOfTrialDays: "7 Days",
+    startDate: "2025-01-01",
+    endDate: "2025-12-31",
+    monthlyCost: "10",
+    usersSubscribed: "120",
+    status: "inactive",
+    recurringType: "Monthly",
+    yearlyCost: "100",
+  },
+];

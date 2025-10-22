@@ -1,4 +1,4 @@
-.header {
+/* .header {
   padding: 5px 0px 15px 0px !important;
   color: var(--black);
   border-top-right-radius: inherit;
@@ -14,7 +14,7 @@
 .header button {
   padding: 0px !important;
   margin: 0px !important;
-  /* position: absolute; */
+ 
   right: 27px;
   top: 27px;
   opacity: 1;
@@ -67,4 +67,75 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+} */
+
+.modalContent {
+  --bs-modal-bg: var(--background-quaternary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--copyright-top-border-color);
+}
+
+.header {
+  padding: 1rem 1rem;
+  color: var(--primary-text-color);
+  background-color: var(--background-section);
+  /* justify-content: center; */
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom: 1px solid var(--copyright-top-border-color);
+}
+
+.header h4 {
+  margin-bottom: 0px;
+  font-size: var(--fs-400);
+}
+
+.secondaryHeader h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.header button {
+  padding: 0px !important;
+  margin: 0px !important;
+  right: 27px;
+  top: 27px;
+  opacity: 1;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat !important;
+}
+
+.header button:hover {
+  opacity: 1;
+  box-shadow: unset;
+}
+
+.footer {
+  padding: 18px 22px;
+  background-color: var(--background-section);
+  border-color: var(--copyright-top-border-color);
+}
+
+.body {
+  padding: 20px;
+  /* padding-top: 0; */
+}
+
+.iconBox {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.iconBox svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  /* background-color: var(--secondary-color); */
+  color: var(--secondary-color);
+  padding: 4px;
+  border-radius: 8px;
 }
