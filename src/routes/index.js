@@ -79,6 +79,15 @@ export const routes = [
     element: <SubscriptionManagement />,
   },
   {
+    path: "/cms",
+    exact: true,
+    protected: true,
+    showInSidebar: true,
+    title: "Content Management System",
+    icon: <FaBook />,
+    element: <Cms />,
+  },
+  {
     path: "/profile-setting",
     exact: true,
     protected: true,
@@ -94,14 +103,5 @@ export const routes = [
     title: "Notifications",
     icon: <FaBell />,
     element: <Notifications />,
-  },
-  {
-    path: "/cms",
-    exact: true,
-    protected: true,
-    showInSidebar: true,
-    title: "Content Management System",
-    icon: <FaBook />,
-    element: <Cms />,
   },
 ];
