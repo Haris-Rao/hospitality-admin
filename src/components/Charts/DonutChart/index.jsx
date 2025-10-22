@@ -86,6 +86,7 @@ export default function DonutChart({
             innerRadius={screenSize ? innerRadius * 0.8 : innerRadius}
             fill="#8884d8"
             dataKey="value"
+            stroke="none"
             paddingAngle={4}
             cornerRadius={8}
           >

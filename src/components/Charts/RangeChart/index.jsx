@@ -63,6 +63,7 @@ const RangeChart = ({
                 innerRadius={isMobile ? 90 : 120}
                 outerRadius={isMobile ? 120 : 150}
                 paddingAngle={4}
+                stroke="none"
                 cornerRadius={8}
               >
                 {data.map((entry, index) => (
