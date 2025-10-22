@@ -1,9 +1,9 @@
 .labelText {
-  color: var(--text-color);
+  color: var(--text-color-dark-secondary);
   text-transform: capitalize;
   font-size: var(--fs-input);
   margin-bottom: 6px;
-  font-weight: 400;
+  font-weight: 500;
   transition: all 0.3s ease-in-out;
   &[data-variant="inline"] {
     margin-bottom: 0;
@@ -21,9 +21,9 @@
   line-height: 1;
   padding-inline: 8px;
   top: 1.5rem;
-  font-size: 12px;
+  font-size: var(--fs-input);
   margin-inline-start: 6px;
-  color: var(--text-color);
+  color: var(--text-color-dark-secondary);
   transform: translateY(-50%);
   opacity: 0.4;
 }
