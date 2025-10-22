@@ -6,6 +6,7 @@ import { Button } from "../Core/Button";
 import PopperComponent from "../Core/PopperComponent";
 import SearchInput from "../Core/SearchInput";
 import classes from "./PageHeader.module.css";
+import BreadCrumbComponent from "../BreadCrumbComponent";
 export default function PageHeader({
   title,
   breadcrumbs = [],
@@ -26,22 +27,13 @@ export default function PageHeader({
     <div className={classes.pageHeader}>
       <div className={classes.pageHeaderLeft}>
         <h2>{title}</h2>
-        {/* {breadcrumbs.length > 0 && <BreadCrumbComponent data={breadcrumbs} />} */}
+        {breadcrumbs.length > 0 && <BreadCrumbComponent data={breadcrumbs} />}
       </div>
       <div className={classes.pageHeaderRight}>
         {showSearch && (
           <SearchInput variant="secondary" value={search} setter={setSearch} />
         )}
-        {buttonLabel && (
-          <Button
-            variant={variant}
-            size="md"
-            label={buttonLabel}
-            rightIcon={buttonIcon}
-            leftIcon={leftIcon}
-            onClick={onClick}
-          />
-        )}
+
         {showFilter && (
           <PopperComponent
             popperInsideElement={children}
@@ -55,6 +47,16 @@ export default function PageHeader({
                 />
               </div>
             }
+          />
+        )}
+        {buttonLabel && (
+          <Button
+            variant={variant}
+            size="md"
+            label={buttonLabel}
+            rightIcon={buttonIcon}
+            leftIcon={leftIcon}
+            onClick={onClick}
           />
         )}
       </div>

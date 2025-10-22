@@ -6,6 +6,9 @@ const Login = lazy(() => import("../pages/Login"));
 // const Notifications = lazy(() => import("../pages/Notifications"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 const HotelManagement = lazy(() => import("../pages/HotelManagement"));
+const HotelDetails = lazy(() =>
+  import("../pages/HotelManagement/HotalDetails")
+);
 export const routes = [
   {
     path: "/login",
@@ -32,5 +35,13 @@ export const routes = [
     title: "Hotel Management",
     icon: <FaHotel />,
     element: <HotelManagement />,
+  },
+  {
+    path: "/hotel-management/:id",
+    exact: true,
+    protected: true,
+    showInSidebar: false,
+    title: "Hotel Details",
+    element: <HotelDetails />,
   },
 ];
