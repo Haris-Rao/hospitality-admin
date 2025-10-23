@@ -1,20 +1,24 @@
 import CallsCard from "@/components/CallsCard";
 import AreaChartComponent from "@/components/Charts/AreaChart";
+import DonutChart from "@/components/Charts/DonutChart";
+import RangeChart from "@/components/Charts/RangeChart";
 import Box from "@/components/Core/Box";
 import SideBarSkeleton from "@/components/Core/SideBarSkeleton";
-import FilterOption from "@/components/FilterOption";
 import InfoCard from "@/components/InfoCard";
 import PageHeader from "@/components/PageHeader";
 import { dashboardData } from "@/constant/DummyData";
+import { getYearRange } from "@/helper/HelperFunction";
 import { useState } from "react";
-import classes from "./Dashboard.module.css";
-import RangeChart from "@/components/Charts/RangeChart";
-import DonutChart from "@/components/Charts/DonutChart";
 import { useNavigate } from "react-router-dom";
+import classes from "./Dashboard.module.css";
 
 export default function Dashboard() {
-  const [data, setData] = useState(dashboardData);
   const navigate = useNavigate();
+  const [data, setData] = useState(dashboardData);
+  const [monthlyRevenueFilter, setMonthlyRevenueFilter] = useState(
+    getYearRange()[0]
+  );
+
   return (
     <SideBarSkeleton>
       <div className={classes.dashboardContainer}>
@@ -55,15 +59,9 @@ export default function Dashboard() {
               className={classes.pageHeadClass}
               title="Monthly Revenue"
               showFilter={true}
-              children={
-                <FilterOption
-                  label="Select Range"
-                  options={[
-                    { label: "Monthly", value: "monthly" },
-                    { label: "Yearly", value: "yearly" },
-                  ]}
-                />
-              }
+              options={getYearRange()}
+              selectedValue={monthlyRevenueFilter}
+              onSelect={(item) => setMonthlyRevenueFilter(item)}
             />
             <AreaChartComponent data={data?.areaChartData} height={300} />
           </Box>

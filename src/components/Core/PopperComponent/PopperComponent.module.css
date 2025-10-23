@@ -4,6 +4,7 @@
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25));
   z-index: 100;
   border-radius: var(--border-radius);
+  min-width: 80px;
 
   &.popperInsideElement {
     background-color: transparent;
@@ -28,7 +29,7 @@
 }
 
 .menuItem {
-  color: var(--primary-text-color);
+  color: var(--white-color);
   font-size: 15px;
   display: flex;
   align-items: center;

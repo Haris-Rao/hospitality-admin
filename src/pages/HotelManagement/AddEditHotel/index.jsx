@@ -12,7 +12,6 @@ import { useParams } from "react-router-dom";
 
 function AddEditHotel() {
   const { id } = useParams();
-  const isEdit = id;
   const [formData, setFormData] = useState({
     image: [],
     Hotel_ID: "",
@@ -34,10 +33,10 @@ function AddEditHotel() {
     <SideBarSkeleton>
       <div className={classes.mainContainer}>
         <PageHeader
-          title={isEdit ? "Edit Hotel" : "Create Hotel"}
+          title={id ? "Edit Hotel" : "Create Hotel"}
           breadcrumbs={[
             { label: "Hotel Management", value: "/hotel-management" },
-            isEdit
+            id
               ? { label: "Edit Hotel", value: `/hotel-management/edit/${id}` }
               : { label: "Create Hotel", value: "/hotel-management/create" },
           ]}
@@ -82,7 +81,7 @@ function AddEditHotel() {
         </div>
         <div className={classes.buttonSection}>
           <Button variant="dark" label="Cancel" />
-          <Button variant="primary" label={isEdit ? "Update" : "Create"} />
+          <Button variant="primary" label={id ? "Update" : "Create"} />
         </div>
       </div>
     </SideBarSkeleton>

@@ -1,5 +1,4 @@
 import SideBarSkeleton from "@/components/Core/SideBarSkeleton";
-import FilterOption from "@/components/FilterOption";
 import InfoCard from "@/components/InfoCard";
 import PageHeader from "@/components/PageHeader";
 import { hotelManagementData } from "@/constant/DummyData";
@@ -10,15 +9,10 @@ import { useNavigate } from "react-router-dom";
 import classes from "./HotelManagement.module.css";
 
 function HotelManagement() {
-  const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState(null);
   const navigate = useNavigate();
-
+  const [search, setSearch] = useState("");
+  const [statusFilter, setStatusFilter] = useState(statusOptions[0]);
   const [data, setData] = useState(hotelManagementData);
-
-  const handleStatusFilter = (option) => {
-    setStatusFilter(option.value);
-  };
 
   return (
     <SideBarSkeleton>
@@ -32,16 +26,9 @@ function HotelManagement() {
           buttonLabel="Create"
           buttonIcon={<FaPlus />}
           onClick={() => navigate("/hotel-management/create")}
-          children={
-            <div style={{ padding: "16px" }}>
-              <FilterOption
-                label="Status Filter"
-                options={statusOptions}
-                selectedValue={statusFilter}
-                onSelect={handleStatusFilter}
-              />
-            </div>
-          }
+          options={statusOptions}
+          selectedValue={statusFilter}
+          onSelect={(item) => setStatusFilter(item)}
         />
 
         <div className={classes.cardWrapper}>

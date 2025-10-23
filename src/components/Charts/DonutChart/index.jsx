@@ -39,8 +39,6 @@ export default function DonutChart({
     percentage: ((item.value / 100) * 100).toFixed(1),
   }));
 
-  console.log("02", dataWithPercentages);
-
   const renderCenterLabel = () => (
     <Label
       value={centerLabel}
@@ -81,7 +79,6 @@ export default function DonutChart({
             cx="50%"
             cy="50%"
             labelLine={false}
-            // label={renderCustomizedLabel}
             outerRadius={screenSize ? outerRadius * 0.8 : outerRadius}
             innerRadius={screenSize ? innerRadius * 0.8 : innerRadius}
             fill="#8884d8"

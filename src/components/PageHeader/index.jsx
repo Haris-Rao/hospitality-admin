@@ -1,13 +1,14 @@
 "use client";
 
 import { useMediaQuery } from "@/customHooks/useMediaQuery";
+import { cn } from "@/helper/HelperFunction";
 import { LuListFilter } from "react-icons/lu";
+import BreadCrumbComponent from "../BreadCrumbComponent";
 import { Button } from "../Core/Button";
 import PopperComponent from "../Core/PopperComponent";
 import SearchInput from "../Core/SearchInput";
 import classes from "./PageHeader.module.css";
-import BreadCrumbComponent from "../BreadCrumbComponent";
-import { cn } from "@/helper/HelperFunction";
+
 export default function PageHeader({
   title,
   breadcrumbs = [],
@@ -21,7 +22,9 @@ export default function PageHeader({
   leftIcon = null,
   onClick = () => {},
   showFilter = false,
-  children,
+  options = [],
+  selectedValue,
+  onSelect,
 }) {
   const isMobile = useMediaQuery("(max-width: 767px)");
 
@@ -33,19 +36,33 @@ export default function PageHeader({
       </div>
       <div className={classes.pageHeaderRight}>
         {showSearch && (
-          <SearchInput variant="secondary" value={search} setter={setSearch} />
+          <SearchInput
+            variant="secondary"
+            value={search}
+            setter={setSearch}
+            customStyle={{
+              height: "42px",
+            }}
+          />
         )}
 
         {showFilter && (
           <PopperComponent
-            popperInsideElement={children}
+            // popperInsideElement={children}
+            handleClick={(item) => {
+              onSelect(item);
+            }}
+            data={options || []}
             align={isMobile ? "start" : "end"}
             children={
               <div className={classes.filterButton}>
                 <Button
-                  label="Filters"
+                  label={selectedValue?.label || "Filters"}
                   variant="white-bordered"
                   leftIcon={<LuListFilter />}
+                  customStyle={{
+                    height: "42px",
+                  }}
                 />
               </div>
             }
@@ -59,6 +76,9 @@ export default function PageHeader({
             rightIcon={buttonIcon}
             leftIcon={leftIcon}
             onClick={onClick}
+            customStyle={{
+              height: "42px",
+            }}
           />
         )}
       </div>
