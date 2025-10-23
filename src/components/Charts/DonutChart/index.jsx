@@ -59,7 +59,7 @@ export default function DonutChart({
       position="center"
       offset={20}
       style={{
-        fill: "var(--text-color-dark-secondary)",
+        fill: "var(--primary-color)",
         fontSize: "24px",
         fontWeight: "700",
       }}
@@ -75,7 +75,7 @@ export default function DonutChart({
         <h3> Billing</h3>
       </div>
       <ResponsiveContainer width={screenSize ? "80%" : "100%"} height={height}>
-        <PieChart>
+        <PieChart style={{ outline: "none" }}>
           <Pie
             data={dataWithPercentages}
             cx="50%"
@@ -89,6 +89,7 @@ export default function DonutChart({
             stroke="none"
             paddingAngle={4}
             cornerRadius={8}
+            style={{ outline: "none" }}
           >
             {dataWithPercentages.map((entry, index) => (
               <Cell

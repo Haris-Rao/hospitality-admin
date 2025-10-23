@@ -4,6 +4,9 @@
   align-items: center;
   gap: 12px;
   width: 100%;
+  :global(.recharts-layer) {
+    outline: none;
+  }
 }
 
 .legendContainer {

@@ -65,6 +65,7 @@ const RangeChart = ({
                 paddingAngle={4}
                 stroke="none"
                 cornerRadius={8}
+                style={{ outline: "none" }}
               >
                 {data.map((entry, index) => (
                   <Cell

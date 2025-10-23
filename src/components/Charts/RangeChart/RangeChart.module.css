@@ -80,14 +80,14 @@
   display: block;
   font-size: 25px;
   font-weight: 600;
-  color: var(--text-color-dark-secondary);
+  color: var(--primary-color);
   line-height: 1;
 }
 
 .totalLabel {
   display: block;
   font-size: 14px;
-  color: var(--text-color-dark-secondary);
+  color: #999999;
   margin-top: 4px;
 }
 
